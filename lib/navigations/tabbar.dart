@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spot__ui/views/home.dart';
+import 'package:spot__ui/views/library.dart';
+import 'package:spot__ui/views/profile.dart';
+import 'package:spot__ui/views/search.dart';
 
 class Tabbar extends StatefulWidget {
   const Tabbar({super.key});
@@ -32,14 +35,33 @@ class _TabbarState extends State<Tabbar> {
         ],
       ),
       body: Stack(children: [
-        IgnorePointer(
-          ignoring: _selectedTab != 0,
-          child: Opacity(
-            opacity: _selectedTab == 0 ? 1 : 0,
-            child: HomeView(),
-          ),
-        )
-      ]),
+        renderView(
+          0,
+          HomeView(),
+        ),
+        renderView(
+          1,
+          SearchView(),
+        ),
+        renderView(
+          2,
+          LibraryView(),
+        ),
+        renderView(
+          3,
+          ProfileView(),
+        ),
+      ],),
+    );
+  }
+
+  Widget renderView(int tabIndex, Widgetview) {
+    return IgnorePointer(
+      ignoring: _selectedTab != tabIndex,
+      child: Opacity(
+        opacity: _selectedTab == tabIndex ? 1 : 0,
+        child: HomeView(),
+      ),
     );
   }
 }
