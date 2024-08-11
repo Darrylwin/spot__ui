@@ -14,7 +14,7 @@ class AlbumCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image(image: image, height: 120, width: 120,),
+        Image(image: image, height: 120, width: 120, fit: BoxFit.cover,),
         const SizedBox(height: 10),
        Text(label),
       ],
