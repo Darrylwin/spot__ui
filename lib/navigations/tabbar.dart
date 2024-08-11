@@ -26,7 +26,7 @@ class _TabbarState extends State<Tabbar> {
         },
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Home'),
+              icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.search_outlined), label: 'Search'),
           BottomNavigationBarItem(
