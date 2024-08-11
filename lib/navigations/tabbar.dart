@@ -60,7 +60,7 @@ class _TabbarState extends State<Tabbar> {
       ignoring: _selectedTab != tabIndex,
       child: Opacity(
         opacity: _selectedTab == tabIndex ? 1 : 0,
-        child: HomeView(),
+        child: Widgetview,
       ),
     );
   }
