@@ -12,15 +12,23 @@ class _AlbumViewState extends State<AlbumView> {
   double imageSize = 0;
   double initialSize = 240;
   double containerHeight = 500;
+  double containerInitialHeight = 500;
+  double imageOpacity = 1;
   @override
   void initState() {
     imageSize = initialSize;
     scrollController = ScrollController()
       ..addListener(() {
         imageSize = initialSize - scrollController!.offset;
-        if (imageSize > 0 && imageSize < initialSize) {
-          setState(() {});
+        if (imageSize < 0) {
+          imageSize = 0;
         }
+        containerHeight = containerInitialHeight - scrollController!.offset;
+        if (containerHeight < 0) {
+          containerHeight = 0;
+        }
+        imageOpacity = imageSize / initialSize;
+        setState(() {});
       });
     super.initState();
   }
@@ -38,22 +46,29 @@ class _AlbumViewState extends State<AlbumView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
-                        offset: const Offset(0, 20),
-                        blurRadius: 32,
-                        spreadRadius: 16,
-                      ),
-                    ],
-                  ),
-                  child: Image(
-                    image: const AssetImage("assets/album4.jpg"),
-                    width: imageSize,
-                    height: imageSize,
-                    fit: BoxFit.cover,
+                Opacity(
+                  opacity: imageOpacity.clamp(0, 1.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.5),
+                          offset: const Offset(0, 20),
+                          blurRadius: 32,
+                          spreadRadius: 16,
+                        ),
+                      ],
+                    ),
+                    // child: AnimatedOpacity(
+                    //   duration: Duration(milliseconds: 800),
+                    //   opacity: imageSize > 50 ? 1 : 0,
+                    child: Image(
+                      image: const AssetImage("assets/album4.jpg"),
+                      width: imageSize,
+                      height: imageSize,
+                      fit: BoxFit.cover,
+                    ),
+                    // ),
                   ),
                 ),
                 SizedBox(height: 100),
