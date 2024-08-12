@@ -7,7 +7,7 @@ class AlbumCard extends StatelessWidget {
   final String label;
   final onTap;
   final double size;
-  const AlbumCard({
+   AlbumCard({
     super.key,
     required this.image,
     required this.label,
@@ -22,7 +22,7 @@ class AlbumCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AlbumView(),
+            builder: (context) => AlbumView(image: image),
           ),
         );
       },
@@ -35,7 +35,7 @@ class AlbumCard extends StatelessWidget {
             width: size,
             fit: BoxFit.cover,
           ),
-          const SizedBox(height: 10),
+           SizedBox(height: 10),
           Text(label),
         ],
       ),

@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer__ructors, prefer__literals_to_create_immutables
 import 'package:flutter/material.dart';
 import '../components/album_card.dart';
 
 class AlbumView extends StatefulWidget {
-  AlbumView({super.key});
+  final /*ImageProvider */ image;
+  AlbumView({super.key, this.image});
 
   @override
   State<AlbumView> createState() => _AlbumViewState();
@@ -17,9 +18,7 @@ class _AlbumViewState extends State<AlbumView> {
   double containerInitialHeight = 500;
   double imageOpacity = 1;
   bool showTopBar = false;
-  final /*ImageProvider */ image;
 
-  _AlbumViewState({this.image});
   @override
   void initState() {
     imageSize = initialSize;
@@ -65,14 +64,14 @@ class _AlbumViewState extends State<AlbumView> {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.5),
-                          offset: const Offset(0, 20),
+                          offset: Offset(0, 20),
                           blurRadius: 32,
                           spreadRadius: 16,
                         ),
                       ],
                     ),
                     child: Image(
-                      image: const AssetImage("assets/album4.jpg"),
+                      image: AssetImage("assets/album4.jpg"),
                       width: imageSize,
                       height: imageSize,
                       fit: BoxFit.cover,
@@ -109,7 +108,7 @@ class _AlbumViewState extends State<AlbumView> {
                         children: [
                           SizedBox(height: initialSize + 32),
                           Padding(
-                            padding: const EdgeInsets.all(8.0 * 2),
+                            padding: EdgeInsets.all(8.0 * 2),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -117,11 +116,11 @@ class _AlbumViewState extends State<AlbumView> {
                                   style: Theme.of(context).textTheme.bodySmall,
                                   'Consequat aliquip dolor consectetur sit veniam. Consectetur ipsum qui nostrud pariatur tempor minim dolor nisi elit elit in est',
                                 ),
-                                const SizedBox(height: 18),
+                                SizedBox(height: 18),
                                 Row(
                                   children: [
                                     Image(
-                                      image: image,
+                                      image: AssetImage("assets/logo.png"),
                                       width: 32,
                                       height: 32,
                                     ),
@@ -129,16 +128,16 @@ class _AlbumViewState extends State<AlbumView> {
                                     Text("Spotify"),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
-                                const Text(
+                                SizedBox(height: 16),
+                                Text(
                                   style: TextStyle(fontSize: 15),
                                   "1.888.132 Likes 5h 3m",
                                 ),
-                                const SizedBox(height: 16),
+                                SizedBox(height: 16),
                                 Stack(
                                   clipBehavior: Clip.none,
                                   children: [
-                                    const Row(
+                                    Row(
                                       children: [
                                         Icon(Icons.favorite),
                                         SizedBox(width: 16),
@@ -168,7 +167,7 @@ class _AlbumViewState extends State<AlbumView> {
                           style: Theme.of(context).textTheme.labelMedium,
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          padding: EdgeInsets.symmetric(vertical: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -188,7 +187,7 @@ class _AlbumViewState extends State<AlbumView> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          padding: EdgeInsets.symmetric(vertical: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -208,7 +207,7 @@ class _AlbumViewState extends State<AlbumView> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          padding: EdgeInsets.symmetric(vertical: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -286,11 +285,11 @@ class _AlbumViewState extends State<AlbumView> {
                                 width: 64,
                                 height: 64,
                                 alignment: Alignment.center,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color(0xFF14D860),
                                 ),
-                                child: const Icon(
+                                child: Icon(
                                   Icons.play_arrow_sharp,
                                   size: 38,
                                 ),
@@ -298,11 +297,11 @@ class _AlbumViewState extends State<AlbumView> {
                               Container(
                                 width: 24,
                                 height: 24,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.white,
                                 ),
-                                child: const Icon(
+                                child: Icon(
                                   Icons.shuffle,
                                   size: 12,
                                   color: Colors.black,

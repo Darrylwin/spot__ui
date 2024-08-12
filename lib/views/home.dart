@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer__ructors
 
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ import '../components/song_card.dart';
 import 'album_view.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+   HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -24,13 +24,13 @@ class _HomeViewState extends State<HomeView> {
         Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * .5,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             color: Color(0xFF1C7A74),
           ),
         ),
         SafeArea(
           child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics:  BouncingScrollPhysics(),
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -50,9 +50,9 @@ class _HomeViewState extends State<HomeView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 40),
+                     SizedBox(height: 40),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding:  EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -60,7 +60,7 @@ class _HomeViewState extends State<HomeView> {
                             "Recently played",
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
-                          const Row(
+                           Row(
                             children: [
                               Icon(Icons.history),
                               SizedBox(width: 20),
@@ -72,39 +72,39 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      physics: const BouncingScrollPhysics(),
-                      padding: const EdgeInsets.all(20),
+                      physics:  BouncingScrollPhysics(),
+                      padding:  EdgeInsets.all(20),
                       child: Row(
                         children: [
                           AlbumCard(
                             label: 'Best Mode',
-                            image: const AssetImage("assets/album7.jpg"),
+                            image:  AssetImage("assets/album7.jpg"),
                           ),
-                          const SizedBox(width: 16),
+                           SizedBox(width: 16),
                           AlbumCard(
                             label: 'Motivation Mix',
-                            image: const AssetImage("assets/album2.jpg"),
+                            image:  AssetImage("assets/album2.jpg"),
                           ),
-                          const SizedBox(width: 16),
+                           SizedBox(width: 16),
                           AlbumCard(
                             label: 'Top 50 global',
-                            image: const AssetImage("assets/top50.jpg"),
+                            image:  AssetImage("assets/top50.jpg"),
                           ),
-                          const SizedBox(width: 16),
+                           SizedBox(width: 16),
                           AlbumCard(
                             label: 'Power Gaming',
-                            image: const AssetImage("assets/album1.jpg"),
+                            image:  AssetImage("assets/album1.jpg"),
                           ),
-                          const SizedBox(width: 16),
+                           SizedBox(width: 16),
                           AlbumCard(
                             label: 'Top songs-global',
-                            image: const AssetImage("assets/album9.jpg"),
+                            image:  AssetImage("assets/album9.jpg"),
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 32),
-                    const Padding(
+                     SizedBox(height: 32),
+                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Column(
                         children: [
@@ -158,7 +158,7 @@ class _HomeViewState extends State<HomeView> {
                         ],
                       ),
                     ),
-                    const Column(
+                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
@@ -203,8 +203,8 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ],
                     ),
-                    const SizedBox(width: 16),
-                    const Column(
+                     SizedBox(width: 16),
+                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
@@ -249,7 +249,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                     SizedBox(height: 16),
                   ],
                 ),
               ),

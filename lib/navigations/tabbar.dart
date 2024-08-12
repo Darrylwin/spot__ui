@@ -5,7 +5,7 @@ import 'package:spot__ui/views/profile.dart';
 import 'package:spot__ui/views/search.dart';
 
 class Tabbar extends StatefulWidget {
-  const Tabbar({super.key});
+   Tabbar({super.key});
 
   @override
   State<Tabbar> createState() => _TabbarState();
@@ -24,7 +24,7 @@ class _TabbarState extends State<Tabbar> {
             _selectedTab = index;
           });
         },
-        items: const [
+        items:  [
           BottomNavigationBarItem(
               icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
@@ -37,19 +37,19 @@ class _TabbarState extends State<Tabbar> {
       body: Stack(children: [
         renderView(
           0,
-          const HomeView(),
+           HomeView(),
         ),
         renderView(
           1,
-          const SearchView(),
+           SearchView(),
         ),
         renderView(
           2,
-          const LibraryView(),
+           LibraryView(),
         ),
         renderView(
           3,
-          const ProfileView(),
+           ProfileView(),
         ),
       ],),
     );

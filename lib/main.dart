@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.white54
         ),
       ),
-      home: const Tabbar(),
+      home: Tabbar(),
     );
   }
 }

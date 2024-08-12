@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class RowAlbumCard extends StatelessWidget {
   final AssetImage image;
   final String label;
-  const RowAlbumCard({
+   RowAlbumCard({
     super.key,
     required this.image,
     required this.label,
@@ -28,7 +28,7 @@ class RowAlbumCard extends StatelessWidget {
               width: 48,
               fit: BoxFit.cover,
             ),
-            const SizedBox(width: 8),
+             SizedBox(width: 8),
             Text(label),
           ],
         ),
