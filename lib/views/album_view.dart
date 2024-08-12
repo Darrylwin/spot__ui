@@ -189,7 +189,34 @@ class _AlbumViewState extends State<AlbumView> {
                 ],
               ),
             ),
-          )
+          ),
+          // appbar
+          Positioned(
+            child: Container(
+              child: Container(
+                color: Color(0xFFC61855),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 18,
+                  vertical: 10,
+                ),
+                child: SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.keyboard_arrow_left),
+                      ),
+                      Text(
+                        "Ophelia",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
