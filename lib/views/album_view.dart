@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../components/album_card.dart';
 
 class AlbumView extends StatefulWidget {
-  final /*ImageProvider */ image;
-  AlbumView({super.key, this.image});
+  final ImageProvider image;
+  AlbumView({super.key, required this.image});
 
   @override
   State<AlbumView> createState() => _AlbumViewState();
@@ -71,7 +71,7 @@ class _AlbumViewState extends State<AlbumView> {
                       ],
                     ),
                     child: Image(
-                      image: AssetImage("assets/album4.jpg"),
+                      image:widget.image,
                       width: imageSize,
                       height: imageSize,
                       fit: BoxFit.cover,
@@ -164,7 +164,7 @@ class _AlbumViewState extends State<AlbumView> {
                         SizedBox(height: 32),
                         Text(
                           "You might also like",
-                          style: Theme.of(context).textTheme.labelMedium,
+                          style: Theme.of(context).textTheme.titleLarge,
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 16),
@@ -175,13 +175,11 @@ class _AlbumViewState extends State<AlbumView> {
                                 size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album3.jpg"),
-                                onTap: () {},
                               ),
                               AlbumCard(
                                 size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album5.jpg"),
-                                onTap: () {},
                               ),
                             ],
                           ),
@@ -195,13 +193,12 @@ class _AlbumViewState extends State<AlbumView> {
                                 size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album6.jpg"),
-                                onTap: () {},
                               ),
                               AlbumCard(
                                 size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album9.jpg"),
-                                onTap: () {},
+                               
                               ),
                             ],
                           ),
@@ -215,13 +212,13 @@ class _AlbumViewState extends State<AlbumView> {
                                 size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album10.jpg"),
-                                onTap: () {},
+                               
                               ),
                               AlbumCard(
                                 size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album4.jpg"),
-                                onTap: () {},
+                               
                               ),
                             ],
                           ),
