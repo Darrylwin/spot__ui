@@ -25,7 +25,8 @@ class _SearchViewState extends State<SearchView> {
                   Row(
                     children: [
                       CircleAvatar(
-                        backgroundImage: AssetImage("assets/album8.jpg"),
+                        radius: 23,
+                        backgroundImage: AssetImage("assets/profil.jpeg"),
                       ),
                       SizedBox(width: 10),
                       Text(
@@ -38,8 +39,23 @@ class _SearchViewState extends State<SearchView> {
                   Icon(Icons.camera_alt_outlined, size: 30, weight: 40)
                 ],
               ),
-              Center(
-                child: Text("Search Works"),
+              SizedBox(height: 40),
+              TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Padding(
+                    padding: const EdgeInsetsDirectional.all(6.0),
+                    child: Icon(Icons.search_rounded, size: 40),
+                  ),
+                  hintText: 'What Should you listen to ?',
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Color.fromARGB(230, 158, 158, 158),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                ),
               ),
             ],
           ),
