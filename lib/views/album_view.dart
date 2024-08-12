@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../components/album_card.dart';
 
 class AlbumView extends StatefulWidget {
-  const AlbumView({super.key});
+  AlbumView({super.key});
 
   @override
   State<AlbumView> createState() => _AlbumViewState();
@@ -17,6 +17,9 @@ class _AlbumViewState extends State<AlbumView> {
   double containerInitialHeight = 500;
   double imageOpacity = 1;
   bool showTopBar = false;
+  final /*ImageProvider */ image;
+
+  _AlbumViewState({this.image});
   @override
   void initState() {
     imageSize = initialSize;
@@ -43,6 +46,7 @@ class _AlbumViewState extends State<AlbumView> {
 
   @override
   Widget build(BuildContext context) {
+    final cardSize = MediaQuery.of(context).size.width / 2 - 32;
     return Scaffold(
       body: Stack(
         children: [
@@ -82,7 +86,7 @@ class _AlbumViewState extends State<AlbumView> {
           SafeArea(
             child: SingleChildScrollView(
               controller: scrollController,
-              physics: const BouncingScrollPhysics(),
+              physics: BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Container(
@@ -100,7 +104,7 @@ class _AlbumViewState extends State<AlbumView> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 40),
+                      padding: EdgeInsets.only(top: 40),
                       child: Column(
                         children: [
                           SizedBox(height: initialSize + 32),
@@ -114,10 +118,10 @@ class _AlbumViewState extends State<AlbumView> {
                                   'Consequat aliquip dolor consectetur sit veniam. Consectetur ipsum qui nostrud pariatur tempor minim dolor nisi elit elit in est',
                                 ),
                                 const SizedBox(height: 18),
-                                const Row(
+                                Row(
                                   children: [
                                     Image(
-                                      image: AssetImage("assets/logo.png"),
+                                      image: image,
                                       width: 32,
                                       height: 32,
                                     ),
@@ -158,19 +162,66 @@ class _AlbumViewState extends State<AlbumView> {
                       children: [
                         Text(
                             "Laborum commodo irure nostrud Lorem ipsum. Aute deserunt irure excepteur duis quis est labore cillum aliqua do esse tempor exercitation aliquip. Nulla qui esse aliqua non cupidatat. Cupidatat dolor ullamco ."),
+                        SizedBox(height: 32),
+                        Text(
+                          "You might also like",
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AlbumCard(
+                                size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album3.jpg"),
                                 onTap: () {},
                               ),
                               AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: AssetImage("assets/album5.jpg"),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: AssetImage("assets/album6.jpg"),
+                                onTap: () {},
+                              ),
+                              AlbumCard(
+                                size: cardSize,
                                 label: "Get Turnt",
                                 image: AssetImage("assets/album9.jpg"),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: AssetImage("assets/album10.jpg"),
+                                onTap: () {},
+                              ),
+                              AlbumCard(
+                                size: cardSize,
+                                label: "Get Turnt",
+                                image: AssetImage("assets/album4.jpg"),
                                 onTap: () {},
                               ),
                             ],
@@ -187,7 +238,7 @@ class _AlbumViewState extends State<AlbumView> {
           Positioned(
             child: Container(
               child: AnimatedContainer(
-                duration: Duration(milliseconds: 500),
+                duration: Duration(milliseconds: 250),
                 color: showTopBar
                     ? Color(0xFFC61855).withOpacity(1)
                     : Color(0xFFC61855).withOpacity(0),
@@ -206,9 +257,14 @@ class _AlbumViewState extends State<AlbumView> {
                         Positioned(
                           left: 0,
                           // top: 8,
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.keyboard_arrow_left),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.keyboard_arrow_left,
+                              size: 38,
+                            ),
                           ),
                         ),
                         AnimatedOpacity(
