@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 class AlbumView extends StatefulWidget {
-  AlbumView({super.key});
+  const AlbumView({super.key});
 
   @override
   State<AlbumView> createState() => _AlbumViewState();
 }
 
 class _AlbumViewState extends State<AlbumView> {
-  // final ScrollController scrollController;
+  ScrollController? scrollController;
+  @override
+  void initState() {
+    scrollController = ScrollController()..addListener(() {});
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +25,8 @@ class _AlbumViewState extends State<AlbumView> {
           ),
           SafeArea(
             child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
+              controller: scrollController,
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
                   Container(
@@ -47,20 +54,20 @@ class _AlbumViewState extends State<AlbumView> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.5),
-                                  offset: Offset(0, 20),
+                                  offset: const Offset(0, 20),
                                   blurRadius: 32,
                                   spreadRadius: 16,
                                 ),
                               ],
                             ),
                             child: Image(
-                              image: AssetImage("assets/album4.jpg"),
+                              image: const AssetImage("assets/album4.jpg"),
                               width: MediaQuery.of(context).size.width - 120,
                               height: MediaQuery.of(context).size.width - 120,
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 16,
                           ),
                           Padding(
@@ -72,8 +79,8 @@ class _AlbumViewState extends State<AlbumView> {
                                   style: Theme.of(context).textTheme.bodySmall,
                                   'Consequat aliquip dolor consectetur sit veniam. Consectetur ipsum qui nostrud pariatur tempor minim dolor nisi elit elit in est',
                                 ),
-                                SizedBox(height: 18),
-                                Row(
+                                const SizedBox(height: 18),
+                                const Row(
                                   children: [
                                     Image(
                                       image: AssetImage("assets/logo.png"),
@@ -84,16 +91,16 @@ class _AlbumViewState extends State<AlbumView> {
                                     Text("Spotify"),
                                   ],
                                 ),
-                                SizedBox(height: 16),
-                                Text(
+                                const SizedBox(height: 16),
+                                const Text(
                                   style: TextStyle(fontSize: 15),
                                   "1.888.132 Likes 5h 3m",
                                 ),
-                                SizedBox(height: 16),
+                                const SizedBox(height: 16),
                                 Stack(
                                   clipBehavior: Clip.none,
                                   children: [
-                                    Row(
+                                    const Row(
                                       children: [
                                         Icon(Icons.favorite),
                                         SizedBox(width: 16),
@@ -110,11 +117,11 @@ class _AlbumViewState extends State<AlbumView> {
                                             width: 64,
                                             height: 64,
                                             alignment: Alignment.center,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xFF14D860),
                                             ),
-                                            child: Icon(
+                                            child: const Icon(
                                               Icons.play_arrow_sharp,
                                               size: 38,
                                             ),
@@ -122,11 +129,11 @@ class _AlbumViewState extends State<AlbumView> {
                                           Container(
                                             width: 24,
                                             height: 24,
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Colors.white,
                                             ),
-                                            child: Icon(
+                                            child: const Icon(
                                               Icons.shuffle,
                                               size: 12,
                                               color: Colors.black,
