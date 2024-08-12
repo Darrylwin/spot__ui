@@ -8,6 +8,7 @@ class AlbumView extends StatefulWidget {
 }
 
 class _AlbumViewState extends State<AlbumView> {
+  // final ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +38,7 @@ class _AlbumViewState extends State<AlbumView> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 40),
+                      padding: const EdgeInsets.only(top: 40),
                       child: Column(
                         children: [
                           // SizedBox(height: 40),
@@ -121,6 +122,15 @@ class _AlbumViewState extends State<AlbumView> {
                                           Container(
                                             width: 24,
                                             height: 24,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Colors.white,
+                                            ),
+                                            child: Icon(
+                                              Icons.shuffle,
+                                              size: 12,
+                                              color: Colors.black,
+                                            ),
                                           ),
                                         ],
                                       ),
