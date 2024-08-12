@@ -9,9 +9,17 @@ class AlbumView extends StatefulWidget {
 
 class _AlbumViewState extends State<AlbumView> {
   ScrollController? scrollController;
+  double imageSize = 140;
   @override
   void initState() {
-    scrollController = ScrollController()..addListener(() {});
+    scrollController = ScrollController()..addListener(() {
+      imageSize = 140 - scrollController!.offset;
+      if(imageSize > 0 && imageSize < 140) {
+        setState(() {
+          
+        });
+      }
+    });
     super.initState();
   }
 
@@ -62,8 +70,8 @@ class _AlbumViewState extends State<AlbumView> {
                             ),
                             child: Image(
                               image: const AssetImage("assets/album4.jpg"),
-                              width: MediaQuery.of(context).size.width - 120,
-                              height: MediaQuery.of(context).size.width - 120,
+                              width: imageSize,
+                              height: imageSize,
                               fit: BoxFit.cover,
                             ),
                           ),
