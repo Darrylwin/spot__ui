@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spot__ui/views/album_view.dart';
-
 class AlbumCard extends StatelessWidget {
   final ImageProvider image;
   final String label;

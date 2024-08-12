@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spot__ui/views/home.dart';
 
 import 'navigations/tabbar.dart';
 
