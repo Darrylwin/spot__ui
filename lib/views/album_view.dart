@@ -1,4 +1,6 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import '../components/album_card.dart';
 
 class AlbumView extends StatefulWidget {
   const AlbumView({super.key});
@@ -14,6 +16,7 @@ class _AlbumViewState extends State<AlbumView> {
   double containerHeight = 500;
   double containerInitialHeight = 500;
   double imageOpacity = 1;
+  bool showTopBar = false;
   @override
   void initState() {
     imageSize = initialSize;
@@ -28,6 +31,11 @@ class _AlbumViewState extends State<AlbumView> {
           containerHeight = 0;
         }
         imageOpacity = imageSize / initialSize;
+        if (scrollController!.offset > 224) {
+          showTopBar = true;
+        } else {
+          showTopBar = false;
+        }
         setState(() {});
       });
     super.initState();
@@ -59,16 +67,12 @@ class _AlbumViewState extends State<AlbumView> {
                         ),
                       ],
                     ),
-                    // child: AnimatedOpacity(
-                    //   duration: Duration(milliseconds: 800),
-                    //   opacity: imageSize > 50 ? 1 : 0,
                     child: Image(
                       image: const AssetImage("assets/album4.jpg"),
                       width: imageSize,
                       height: imageSize,
                       fit: BoxFit.cover,
                     ),
-                    // ),
                   ),
                 ),
                 SizedBox(height: 100),
@@ -83,7 +87,6 @@ class _AlbumViewState extends State<AlbumView> {
                 children: [
                   Container(
                     clipBehavior: Clip.none,
-                    // height: 500,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -148,9 +151,34 @@ class _AlbumViewState extends State<AlbumView> {
                     ),
                   ),
                   Container(
-                    height: 1000,
+                    padding: EdgeInsets.all(16),
                     color: Colors.black,
-                  )
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                            "Laborum commodo irure nostrud Lorem ipsum. Aute deserunt irure excepteur duis quis est labore cillum aliqua do esse tempor exercitation aliquip. Nulla qui esse aliqua non cupidatat. Cupidatat dolor ullamco ."),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              AlbumCard(
+                                label: "Get Turnt",
+                                image: AssetImage("assets/album3.jpg"),
+                                onTap: () {},
+                              ),
+                              AlbumCard(
+                                label: "Get Turnt",
+                                image: AssetImage("assets/album9.jpg"),
+                                onTap: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -158,8 +186,11 @@ class _AlbumViewState extends State<AlbumView> {
           // appbar
           Positioned(
             child: Container(
-              child: Container(
-                color: Color(0xFFC61855),
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 500),
+                color: showTopBar
+                    ? Color(0xFFC61855).withOpacity(1)
+                    : Color(0xFFC61855).withOpacity(0),
                 padding: EdgeInsets.symmetric(
                   horizontal: 18,
                   vertical: 10,
@@ -180,9 +211,13 @@ class _AlbumViewState extends State<AlbumView> {
                             icon: Icon(Icons.keyboard_arrow_left),
                           ),
                         ),
-                        Text(
-                          "Ophelia",
-                          style: TextStyle(fontSize: 20),
+                        AnimatedOpacity(
+                          duration: Duration(milliseconds: 250),
+                          opacity: showTopBar ? 1 : 0,
+                          child: Text(
+                            "Ophelia",
+                            style: TextStyle(fontSize: 20),
+                          ),
                         ),
                         Positioned(
                           right: 0,
