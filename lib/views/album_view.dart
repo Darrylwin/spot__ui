@@ -11,6 +11,7 @@ class _AlbumViewState extends State<AlbumView> {
   ScrollController? scrollController;
   double imageSize = 0;
   double initialSize = 240;
+  double containerHeight = 500;
   @override
   void initState() {
     imageSize = initialSize;
@@ -30,27 +31,33 @@ class _AlbumViewState extends State<AlbumView> {
       body: Stack(
         children: [
           Container(
-            height: imageSize * 2,
+            height: containerHeight,
+            width: MediaQuery.of(context).size.width,
+            alignment: Alignment.center,
             color: Colors.pink,
-            child: Center(
-              child: Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.5),
-                      offset: const Offset(0, 20),
-                      blurRadius: 32,
-                      spreadRadius: 16,
-                    ),
-                  ],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.5),
+                        offset: const Offset(0, 20),
+                        blurRadius: 32,
+                        spreadRadius: 16,
+                      ),
+                    ],
+                  ),
+                  child: Image(
+                    image: const AssetImage("assets/album4.jpg"),
+                    width: imageSize,
+                    height: imageSize,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                child: Image(
-                  image: const AssetImage("assets/album4.jpg"),
-                  width: imageSize,
-                  height: imageSize,
-                  fit: BoxFit.cover,
-                ),
-              ),
+                SizedBox(height: 100),
+              ],
             ),
           ),
           SafeArea(
