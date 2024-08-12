@@ -3,11 +3,14 @@ class AlbumCard extends StatelessWidget {
   final ImageProvider image;
   final String label;
   final onTap;
+  final  double size;
   const AlbumCard({
     super.key,
     required this.image,
     required this.label,
     required this.onTap,
+    this.size = 120,
+
   });
 
   @override
@@ -19,8 +22,8 @@ class AlbumCard extends StatelessWidget {
         children: [
           Image(
             image: image,
-            height: 120,
-            width: 120,
+            height: size,
+            width: size,
             fit: BoxFit.cover,
           ),
           const SizedBox(height: 10),

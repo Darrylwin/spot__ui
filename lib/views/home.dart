@@ -134,6 +134,7 @@ class _HomeViewState extends State<HomeView> {
                             label: 'Power Gaming',
                             image: const AssetImage("assets/album1.jpg"),
                           ),
+                          const SizedBox(width: 16),
                           AlbumCard(
                             onTap: () {
                               Navigator.push(
