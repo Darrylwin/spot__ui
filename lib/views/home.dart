@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 import '../components/album_card.dart';
@@ -24,15 +26,6 @@ class _HomeViewState extends State<HomeView> {
           height: MediaQuery.of(context).size.height * .5,
           decoration: const BoxDecoration(
             color: Color(0xFF1C7A74),
-            // gradient: LinearGradient(
-            //   colors: [
-            //     Colors.white.withOpacity(0.5),
-            //     Colors.white.withOpacity(0.1),
-            //     Colors.black.withOpacity(0),
-            //   ],
-            //   begin: Alignment.topCenter,
-            //   end: Alignment.bottomCenter,
-            // ),
           ),
         ),
         SafeArea(
@@ -84,66 +77,26 @@ class _HomeViewState extends State<HomeView> {
                       child: Row(
                         children: [
                           AlbumCard(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
-                                ),
-                              );
-                            },
                             label: 'Best Mode',
                             image: const AssetImage("assets/album7.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
-                                ),
-                              );
-                            },
                             label: 'Motivation Mix',
                             image: const AssetImage("assets/album2.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
-                                ),
-                              );
-                            },
                             label: 'Top 50 global',
                             image: const AssetImage("assets/top50.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
-                                ),
-                              );
-                            },
                             label: 'Power Gaming',
                             image: const AssetImage("assets/album1.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const AlbumView(),
-                                ),
-                              );
-                            },
                             label: 'Top songs-global',
                             image: const AssetImage("assets/album9.jpg"),
                           ),
