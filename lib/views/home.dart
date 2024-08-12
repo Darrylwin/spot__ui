@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
         Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * .5,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0xFF1C7A74),
             // gradient: LinearGradient(
             //   colors: [
@@ -67,10 +67,10 @@ class _HomeViewState extends State<HomeView> {
                             "Recently played",
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
-                          Row(
+                          const Row(
                             children: [
                               Icon(Icons.history),
-                              const SizedBox(width: 20),
+                              SizedBox(width: 20),
                               Icon(Icons.settings),
                             ],
                           ),
@@ -88,12 +88,12 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AlbumView(),
+                                  builder: (context) => const AlbumView(),
                                 ),
                               );
                             },
                             label: 'Best Mode',
-                            image: AssetImage("assets/album7.jpg"),
+                            image: const AssetImage("assets/album7.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
@@ -101,12 +101,12 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AlbumView(),
+                                  builder: (context) => const AlbumView(),
                                 ),
                               );
                             },
                             label: 'Motivation Mix',
-                            image: AssetImage("assets/album2.jpg"),
+                            image: const AssetImage("assets/album2.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
@@ -114,12 +114,12 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AlbumView(),
+                                  builder: (context) => const AlbumView(),
                                 ),
                               );
                             },
                             label: 'Top 50 global',
-                            image: AssetImage("assets/top50.jpg"),
+                            image: const AssetImage("assets/top50.jpg"),
                           ),
                           const SizedBox(width: 16),
                           AlbumCard(
@@ -127,31 +127,31 @@ class _HomeViewState extends State<HomeView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AlbumView(),
+                                  builder: (context) => const AlbumView(),
                                 ),
                               );
                             },
                             label: 'Power Gaming',
-                            image: AssetImage("assets/album1.jpg"),
+                            image: const AssetImage("assets/album1.jpg"),
                           ),
                           AlbumCard(
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => AlbumView(),
+                                  builder: (context) => const AlbumView(),
                                 ),
                               );
                             },
                             label: 'Top songs-global',
-                            image: AssetImage("assets/album9.jpg"),
+                            image: const AssetImage("assets/album9.jpg"),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 32),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
+                    const SizedBox(height: 32),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
                       child: Column(
                         children: [
                           Text(
@@ -204,11 +204,11 @@ class _HomeViewState extends State<HomeView> {
                         ],
                       ),
                     ),
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0 * 2),
+                          padding: EdgeInsets.all(8.0 * 2),
                           child: Text(
                             "Recents",
                             style: TextStyle(
@@ -249,12 +249,12 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ],
                     ),
-                    SizedBox(width: 16),
-                    Column(
+                    const SizedBox(width: 16),
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0 * 2),
+                          padding: EdgeInsets.all(8.0 * 2),
                           child: Text(
                             "Recommended",
                             style: TextStyle(
@@ -295,7 +295,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                   ],
                 ),
               ),

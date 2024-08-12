@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         scaffoldBackgroundColor: Colors.black,
         brightness: Brightness.dark,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white10,
           type: BottomNavigationBarType.fixed,
           selectedLabelStyle: TextStyle(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.white54
         ),
       ),
-      home: Tabbar(),
+      home: const Tabbar(),
     );
   }
 }

@@ -3,7 +3,7 @@ class AlbumCard extends StatelessWidget {
   final ImageProvider image;
   final String label;
   final onTap;
-  AlbumCard({
+  const AlbumCard({
     super.key,
     required this.image,
     required this.label,

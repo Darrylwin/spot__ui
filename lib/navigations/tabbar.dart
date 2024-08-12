@@ -21,10 +21,10 @@ class _TabbarState extends State<Tabbar> {
         currentIndex: _selectedTab,
         onTap: (index) {
           setState(() {
-            this._selectedTab = index;
+            _selectedTab = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
@@ -37,19 +37,19 @@ class _TabbarState extends State<Tabbar> {
       body: Stack(children: [
         renderView(
           0,
-          HomeView(),
+          const HomeView(),
         ),
         renderView(
           1,
-          SearchView(),
+          const SearchView(),
         ),
         renderView(
           2,
-          LibraryView(),
+          const LibraryView(),
         ),
         renderView(
           3,
-          ProfileView(),
+          const ProfileView(),
         ),
       ],),
     );
