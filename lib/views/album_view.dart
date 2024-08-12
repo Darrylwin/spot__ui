@@ -9,17 +9,18 @@ class AlbumView extends StatefulWidget {
 
 class _AlbumViewState extends State<AlbumView> {
   ScrollController? scrollController;
-  double imageSize = 140;
+  double imageSize = 0;
+  double initialSize = 240;
   @override
   void initState() {
-    scrollController = ScrollController()..addListener(() {
-      imageSize = 140 - scrollController!.offset;
-      if(imageSize > 0 && imageSize < 140) {
-        setState(() {
-          
-        });
-      }
-    });
+    imageSize = initialSize;
+    scrollController = ScrollController()
+      ..addListener(() {
+        imageSize = initialSize - scrollController!.offset;
+        if (imageSize > 0 && imageSize < initialSize) {
+          setState(() {});
+        }
+      });
     super.initState();
   }
 
@@ -30,6 +31,24 @@ class _AlbumViewState extends State<AlbumView> {
         children: [
           Container(
             color: Colors.pink,
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    offset: const Offset(0, 20),
+                    blurRadius: 32,
+                    spreadRadius: 16,
+                  ),
+                ],
+              ),
+              child: Image(
+                image: const AssetImage("assets/album4.jpg"),
+                width: imageSize,
+                height: imageSize,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           SafeArea(
             child: SingleChildScrollView(
@@ -56,28 +75,7 @@ class _AlbumViewState extends State<AlbumView> {
                       padding: const EdgeInsets.only(top: 40),
                       child: Column(
                         children: [
-                          // SizedBox(height: 40),
-                          Container(
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.5),
-                                  offset: const Offset(0, 20),
-                                  blurRadius: 32,
-                                  spreadRadius: 16,
-                                ),
-                              ],
-                            ),
-                            child: Image(
-                              image: const AssetImage("assets/album4.jpg"),
-                              width: imageSize,
-                              height: imageSize,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 16,
-                          ),
+                          SizedBox(height: initialSize + 32),
                           Padding(
                             padding: const EdgeInsets.all(8.0 * 2),
                             child: Column(
@@ -160,7 +158,7 @@ class _AlbumViewState extends State<AlbumView> {
                     ),
                   ),
                   Container(
-                    height: 500,
+                    height: 1000,
                     color: Colors.black,
                   )
                 ],
