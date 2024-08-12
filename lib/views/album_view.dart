@@ -138,41 +138,6 @@ class _AlbumViewState extends State<AlbumView> {
                                         Icon(Icons.more_horiz)
                                       ],
                                     ),
-                                    Positioned(
-                                      right: 0,
-                                      bottom: 0,
-                                      child: Stack(
-                                        alignment: Alignment.bottomRight,
-                                        children: [
-                                          Container(
-                                            width: 64,
-                                            height: 64,
-                                            alignment: Alignment.center,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Color(0xFF14D860),
-                                            ),
-                                            child: const Icon(
-                                              Icons.play_arrow_sharp,
-                                              size: 38,
-                                            ),
-                                          ),
-                                          Container(
-                                            width: 24,
-                                            height: 24,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.white,
-                                            ),
-                                            child: const Icon(
-                                              Icons.shuffle,
-                                              size: 12,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 ),
                               ],
@@ -200,18 +165,63 @@ class _AlbumViewState extends State<AlbumView> {
                   vertical: 10,
                 ),
                 child: SafeArea(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.keyboard_arrow_left),
-                      ),
-                      Text(
-                        "Ophelia",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ],
+                  child: Container(
+                    height: 40,
+                    width: MediaQuery.of(context).size.width,
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.center,
+                      children: [
+                        Positioned(
+                          left: 0,
+                          // top: 8,
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.keyboard_arrow_left),
+                          ),
+                        ),
+                        Text(
+                          "Ophelia",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Positioned(
+                          right: 0,
+                          bottom: 80 -
+                              containerHeight.clamp(120.0, double.infinity),
+                          child: Stack(
+                            alignment: Alignment.bottomRight,
+                            children: [
+                              Container(
+                                width: 64,
+                                height: 64,
+                                alignment: Alignment.center,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xFF14D860),
+                                ),
+                                child: const Icon(
+                                  Icons.play_arrow_sharp,
+                                  size: 38,
+                                ),
+                              ),
+                              Container(
+                                width: 24,
+                                height: 24,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white,
+                                ),
+                                child: const Icon(
+                                  Icons.shuffle,
+                                  size: 12,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
