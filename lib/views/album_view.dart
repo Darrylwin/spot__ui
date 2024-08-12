@@ -30,23 +30,26 @@ class _AlbumViewState extends State<AlbumView> {
       body: Stack(
         children: [
           Container(
+            height: imageSize * 2,
             color: Colors.pink,
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.5),
-                    offset: const Offset(0, 20),
-                    blurRadius: 32,
-                    spreadRadius: 16,
-                  ),
-                ],
-              ),
-              child: Image(
-                image: const AssetImage("assets/album4.jpg"),
-                width: imageSize,
-                height: imageSize,
-                fit: BoxFit.cover,
+            child: Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.5),
+                      offset: const Offset(0, 20),
+                      blurRadius: 32,
+                      spreadRadius: 16,
+                    ),
+                  ],
+                ),
+                child: Image(
+                  image: const AssetImage("assets/album4.jpg"),
+                  width: imageSize,
+                  height: imageSize,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
