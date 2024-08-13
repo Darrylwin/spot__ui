@@ -5,7 +5,7 @@ import 'package:spot__ui/views/profile.dart';
 import 'package:spot__ui/views/search.dart';
 
 class Tabbar extends StatefulWidget {
-   Tabbar({super.key});
+  Tabbar({super.key});
 
   @override
   State<Tabbar> createState() => _TabbarState();
@@ -17,41 +17,60 @@ class _TabbarState extends State<Tabbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedTab,
-        onTap: (index) {
-          setState(() {
-            _selectedTab = index;
-          });
-        },
-        items:  [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search_outlined), label: 'Search'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.library_music), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+      bottomNavigationBar: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.transparent.withOpacity(0.1),
+                  Colors.transparent.withOpacity(0.1),
+                  Colors.transparent.withOpacity(0.1),
+                  Colors.black,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: BottomNavigationBar(
+              backgroundColor: Colors.transparent,
+              onTap: (index) {
+                setState(() {
+                  _selectedTab = index;
+                });
+              },
+              items: [
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.search_outlined), label: 'Search'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.library_music), label: 'Library'),
+                BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+              ],
+            ),
+          ),
         ],
       ),
-      body: Stack(children: [
-        renderView(
-          0,
-           HomeView(),
-        ),
-        renderView(
-          1,
-           SearchView(),
-        ),
-        renderView(
-          2,
-           LibraryView(),
-        ),
-        renderView(
-          3,
-           ProfileView(),
-        ),
-      ],),
+      body: Stack(
+        children: [
+          renderView(
+            0,
+            HomeView(),
+          ),
+          renderView(
+            1,
+            SearchView(),
+          ),
+          renderView(
+            2,
+            LibraryView(),
+          ),
+          renderView(
+            3,
+            ProfileView(),
+          ),
+        ],
+      ),
     );
   }
 
