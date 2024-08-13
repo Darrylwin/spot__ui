@@ -40,20 +40,28 @@ class _SearchViewState extends State<SearchView> {
                 ],
               ),
               SizedBox(height: 40),
-              TextField(
-                decoration: InputDecoration(
-                  prefixIcon: Padding(
-                    padding: const EdgeInsetsDirectional.all(6.0),
-                    child: Icon(Icons.search_rounded, size: 40),
-                  ),
-                  hintText: 'What Should you listen to ?',
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Color.fromARGB(230, 158, 158, 158),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(7),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    prefixIcon: Padding(
+                      padding: const EdgeInsetsDirectional.all(6.0),
+                      child: Icon(Icons.search_rounded, size: 35, color: Color.fromARGB(255, 21, 19, 19)),
+                    ),
+                    hintText: 'What should you listen to ?',
+                    hintStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Color.fromARGB(230, 87, 85, 85),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(7),
+                    ),
                   ),
                 ),
               ),
