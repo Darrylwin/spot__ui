@@ -45,7 +45,7 @@ class _SearchViewState extends State<SearchView> {
                           radius: 23,
                           backgroundImage: AssetImage("assets/profil.jpeg"),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: 13),
                         Text(
                           "Search",
                           style: TextStyle(
