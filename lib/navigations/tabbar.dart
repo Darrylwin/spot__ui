@@ -17,23 +17,25 @@ class _TabbarState extends State<Tabbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Colors.transparent.withOpacity(0.1),
-                  Colors.transparent.withOpacity(0.1),
-                  Colors.transparent.withOpacity(0.1),
-                  Colors.black,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-            child: BottomNavigationBar(
-              backgroundColor: Colors.transparent,
+      bottomNavigationBar: 
+      // Stack(
+        // children: [
+          // Container(
+            // decoration: BoxDecoration(
+            //   gradient: LinearGradient(
+            //     colors: [
+            //       Colors.transparent.withOpacity(0.1),
+            //       Colors.transparent.withOpacity(0.1),
+            //       Colors.transparent.withOpacity(0.1),
+            //       Colors.black,
+            //     ],
+            //     begin: Alignment.topCenter,
+            //     end: Alignment.bottomCenter,
+            //   ),
+            // ),
+            // child: 
+            BottomNavigationBar(
+              // backgroundColor: Colors.transparent,
               onTap: (index) {
                 setState(() {
                   _selectedTab = index;
@@ -48,9 +50,9 @@ class _TabbarState extends State<Tabbar> {
                 BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
               ],
             ),
-          ),
-        ],
-      ),
+          // ),
+        // ],
+      // ),
       body: Stack(
         children: [
           renderView(

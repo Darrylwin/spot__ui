@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
             fontSize: 12,
           ),
           selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.white54
+          unselectedItemColor: Color.fromARGB(137, 178, 175, 175)
         ),
       ),
       home: Tabbar(),
