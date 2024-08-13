@@ -115,9 +115,24 @@ class _SearchViewState extends State<SearchView> {
                                   borderRadius: BorderRadius.circular(18),
                                   child: Container(
                                     width: 125,
-                                    child: Image.asset(
-                                      genre[index].bgImage,
-                                      fit: BoxFit.cover,
+                                    child: Stack(
+                                      children: [
+                                        Image.asset(
+                                          genre[index].bgImage,
+                                          fit: BoxFit.cover,
+                                        ),
+                                        Positioned(
+                                          bottom: 10,
+                                          child: Text(
+                                            genre[index].text,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 );

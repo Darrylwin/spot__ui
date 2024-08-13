@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class GenreCard {
   String bgImage, text;
   GenreCard({
@@ -19,28 +17,28 @@ class GenreCard {
 
     genre.add(
       GenreCard(
-        text: "#afro r&b",
+        text: "#Rap clam",
         bgImage: "assets/album4.jpg",
       ),
     );
 
     genre.add(
       GenreCard(
-        text: "#afro r&b",
+        text: "#French Music",
         bgImage: "assets/album12.jpg",
       ),
     );
 
     genre.add(
       GenreCard(
-        text: "#afro r&b",
+        text: "#Top tendance",
         bgImage: "assets/album11.jpg",
       ),
     );
 
     genre.add(
       GenreCard(
-        text: "#afro r&b",
+        text: "#Drake",
         bgImage: "assets/album2.jpg",
       ),
     );
