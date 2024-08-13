@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/filter.dart';
+
 class LibraryView extends StatefulWidget {
   const LibraryView({super.key});
 
@@ -10,7 +12,7 @@ class LibraryView extends StatefulWidget {
 class _LibraryState extends State<LibraryView> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -46,6 +48,22 @@ class _LibraryState extends State<LibraryView> {
                       ],
                     )
                   ],
+                ),
+                SizedBox(height: 28),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Filter(text: 'Playlists'),
+                      SizedBox(width: 10),
+                      Filter(text: "Podcasts"),
+                      SizedBox(width: 10),
+                      Filter(text: "Albums"),
+                      SizedBox(width: 10),
+                      Filter(text: "Artists"),
+                    ],
+                  ),
                 ),
               ],
             ),
