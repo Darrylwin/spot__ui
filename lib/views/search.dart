@@ -85,9 +85,9 @@ class _SearchViewState extends State<SearchView> {
                   ),
                 ),
                 SizedBox(height: 30),
-          
+
                 //genre section
-          
+
                 SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
@@ -132,7 +132,7 @@ class _SearchViewState extends State<SearchView> {
                         ],
                       ),
                       SizedBox(height: 18),
-          
+
                       //browse section
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -150,24 +150,96 @@ class _SearchViewState extends State<SearchView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          BrowseCard(),
-                          BrowseCard(),
+                          BrowseCard(
+                            text: "Music",
+                            boxColor: const Color.fromARGB(255, 158, 19, 66),
+                            imagePath: "assets/album1.jpg",
+                          ),
+                          BrowseCard(
+                            text: "Podcasts",
+                            boxColor: Color.fromARGB(72, 36, 133, 99),
+                            imagePath: "assets/album2.jpg",
+                          ),
                         ],
                       ),
                       SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          BrowseCard(),
-                          BrowseCard(),
+                          BrowseCard(
+                            text: "Live\nEvents",
+                            boxColor: Color.fromARGB(255, 84, 11, 113),
+                            imagePath: "assets/album3.jpg",
+                          ),
+                          BrowseCard(
+                            text: "Made\nfor you",
+                            boxColor: Color.fromARGB(255, 14, 43, 124),
+                            imagePath: "assets/album4.jpg",
+                          ),
                         ],
                       ),
                       SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          BrowseCard(),
-                          BrowseCard(),
+                          BrowseCard(
+                            text: "New Gen",
+                            boxColor: Color.fromARGB(255, 140, 45, 4),
+                            imagePath: "assets/album5.jpg",
+                          ),
+                          BrowseCard(
+                            text: "Afro",
+                            boxColor: Color.fromARGB(255, 136, 5, 5),
+                            imagePath: "assets/album6.jpg",
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          BrowseCard(
+                            text: "Pop",
+                            boxColor: Color.fromARGB(255, 19, 91, 158),
+                            imagePath: "assets/album7.jpg",
+                          ),
+                          BrowseCard(
+                            text: "Comedy",
+                            boxColor: Color.fromARGB(121, 13, 87, 103),
+                            imagePath: "assets/album8.jpg",
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          BrowseCard(
+                            text: "Discover",
+                            boxColor: Color.fromARGB(98, 113, 86, 11),
+                            imagePath: "assets/album9.jpg",
+                          ),
+                          BrowseCard(
+                            text: "R&B",
+                            boxColor: Color.fromARGB(255, 9, 85, 33),
+                            imagePath: "assets/album10.jpg",
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          BrowseCard(
+                            text: "Party",
+                            boxColor: Color.fromARGB(255, 49, 1, 1),
+                            imagePath: "assets/album11.jpg",
+                          ),
+                          BrowseCard(
+                            text: "Anime",
+                            boxColor: Color.fromARGB(255, 89, 57, 16),
+                            imagePath: "assets/album12.jpg",
+                          ),
                         ],
                       ),
                     ],
