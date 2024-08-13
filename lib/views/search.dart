@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
+import '../components/genre_card.dart';
 
 class SearchView extends StatefulWidget {
-  const SearchView({super.key});
+  SearchView({super.key});
 
   @override
   State<SearchView> createState() => _SearchViewState();
 }
 
 class _SearchViewState extends State<SearchView> {
+  List<GenreCard> genre = [];
+
+  void _getGenres() {
+    genre = GenreCard.getGenres();
+  }
+
+  @override
+  void initState() {
+    _getGenres();
+    // super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _getGenres();
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -69,31 +83,43 @@ class _SearchViewState extends State<SearchView> {
                 ),
               ),
               SizedBox(height: 30),
-              SingleChildScrollView(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Explore your genres",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Explore your genres",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              Container(
-                height: 225,
-                width: 125,
-                child: Image.asset(
-                  "assets/album6.jpg",
-                  fit: BoxFit.cover,
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 225,
+                    decoration: BoxDecoration(
+                        // color: Colors.deepPurple,
+                        ),
+                    child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 125,
+                          child: Image.asset(
+                            genre[index].bgImage,
+                            fit: BoxFit.cover,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        );
+                      },
+                      separatorBuilder: (context, index) => SizedBox(
+                        width: 20,
+                      ),
+                      itemCount: genre.length,
+                      scrollDirection: Axis.horizontal,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 18),
               Row(
