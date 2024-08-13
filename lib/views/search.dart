@@ -110,33 +110,62 @@ class _SearchViewState extends State<SearchView> {
               ),
               SizedBox(height: 20),
               SingleChildScrollView(
-                child: Row(
-                  children: [
-                    Container(
-                      height: 140,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.pink,
-                        borderRadius: BorderRadius.circular(04),
-                      ),
-                      child: Stack(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 18),
-                            child: Text(
-                              "Music",
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
+                // padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 140,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.pink,
+                          borderRadius: BorderRadius.circular(04),
+                        ),
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 18),
+                              child: Text(
+                                "Music",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                          // Positioned(),
-                        ],
+                            // Positioned(),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 16),
+                      Container(
+                        height: 140,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.pink,
+                          borderRadius: BorderRadius.circular(04),
+                        ),
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 18),
+                              child: Text(
+                                "Music",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            // Positioned(),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
