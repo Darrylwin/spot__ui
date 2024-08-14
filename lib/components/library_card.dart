@@ -6,7 +6,7 @@ class LibraryCard {
   LibraryCard({
     this.bolledText = 'Error',
     this.message = 'Error',
-    this.imagePath = 'assets/album15.jpg',
+    this.imagePath = 'assets/album1.jpg',
   });
 
   static List<LibraryCard> getLibraries() {
@@ -19,12 +19,12 @@ class LibraryCard {
       ),
     );
 
-    // library.add(
-    //   LibraryCard(
-    //     bolledText: 'Your Episodes',
-    //     message: 'Saved & downloaded episodes',
-    //   ),
-    // );
+    library.add(
+      LibraryCard(
+        bolledText: 'Your Episodes',
+        message: 'Saved & downloaded episodes',
+      ),
+    );
 
     // library.add(
     //   LibraryCard(

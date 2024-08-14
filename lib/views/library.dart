@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
 
 import '../components/filter.dart';
+import '../components/library_card.dart';
 
 class LibraryView extends StatefulWidget {
-  const LibraryView({super.key});
+  LibraryView({super.key});
 
   @override
   State<LibraryView> createState() => _LibraryState();
 }
 
 class _LibraryState extends State<LibraryView> {
+  List<LibraryCard> library = [];
+
+  void _getLibraries() {
+    library = LibraryCard.getLibraries();
+  }
+
+  @override
+  void initState() {
+    _getLibraries(); // super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _getLibraries();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -87,7 +100,49 @@ class _LibraryState extends State<LibraryView> {
                         Icon(Icons.grid_view_outlined),
                       ],
                     ),
-                    Row(),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          child: Image.asset("assets/album1.jpg"),
+                        ),
+                        SizedBox(width: 16),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Artist.',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.w600),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              'Podcast',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Color.fromARGB(255, 138, 136, 136),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+
+                    // ListView.separated(
+                    //   itemBuilder: (context, index) {
+
+
+                    //   },
+                    //   itemCount: library.length,
+                    //   separatorBuilder: (context, index) => SizedBox(
+                    //     height: 14,
+                    //   ),
+                    //   scrollDirection: Axis.vertical,
+                    // ),
                   ],
                 ),
               ],
