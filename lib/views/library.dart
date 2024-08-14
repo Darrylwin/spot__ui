@@ -65,6 +65,31 @@ class _LibraryState extends State<LibraryView> {
                     ],
                   ),
                 ),
+                Column(
+                  children: [
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          child: Row(
+                            children: [
+                              Icon(Icons.swap_vert_outlined),
+                              SizedBox(width: 16),
+                              Text(
+                                "Recents",
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w700),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Icon(Icons.grid_view_outlined),
+                      ],
+                    ),
+                    Row(),
+                  ],
+                ),
               ],
             ),
           ),
