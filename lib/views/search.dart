@@ -257,6 +257,7 @@ class _SearchViewState extends State<SearchView> {
                           ),
                         ],
                       ),
+                      SizedBox(height: 10),
                     ],
                   ),
                 ),
