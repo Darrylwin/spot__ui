@@ -1,6 +1,6 @@
 // ignore_for_file: prefer__ructors, prefer__literals_to_create_immutables
 import 'package:flutter/material.dart';
-import '../components/album_card.dart';
+import '../widgets/album_card.dart';
 
 class AlbumView extends StatefulWidget {
   final ImageProvider image;

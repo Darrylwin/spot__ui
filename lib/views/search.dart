@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/browse_card.dart';
+import '../widgets/browse_card.dart';
 import '../components/genre_card.dart';
 
 class SearchView extends StatefulWidget {

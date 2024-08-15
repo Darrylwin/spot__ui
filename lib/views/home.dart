@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-import '../components/album_card.dart';
-import '../components/row_album_card.dart';
-import '../components/song_card.dart';
+import '../widgets/album_card.dart';
+import '../widgets/row_album_card.dart';
+import '../widgets/song_card.dart';
 import 'album_view.dart';
 
 class HomeView extends StatefulWidget {
