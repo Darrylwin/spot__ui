@@ -1,6 +1,7 @@
 // ignore_for_file: prefer__ructors
 
 import 'package:flutter/material.dart';
+import 'package:spot__ui/components/artiste_circle.dart';
 
 import '../widgets/album_card.dart';
 import '../widgets/row_album_card.dart';
@@ -8,7 +9,7 @@ import '../widgets/song_card.dart';
 import 'album_view.dart';
 
 class HomeView extends StatefulWidget {
-   HomeView({super.key});
+  HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -24,13 +25,13 @@ class _HomeViewState extends State<HomeView> {
         Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * .5,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             color: Color(0xFF1C7A74),
           ),
         ),
         SafeArea(
           child: SingleChildScrollView(
-            physics:  BouncingScrollPhysics(),
+            physics: BouncingScrollPhysics(),
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -50,9 +51,9 @@ class _HomeViewState extends State<HomeView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                     SizedBox(height: 40),
+                    SizedBox(height: 40),
                     Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -60,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
                             "Recently played",
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
-                           Row(
+                          Row(
                             children: [
                               Icon(Icons.history),
                               SizedBox(width: 20),
@@ -72,39 +73,39 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      physics:  BouncingScrollPhysics(),
-                      padding:  EdgeInsets.all(20),
+                      physics: BouncingScrollPhysics(),
+                      padding: EdgeInsets.all(20),
                       child: Row(
                         children: [
                           AlbumCard(
                             label: 'Best Mode',
-                            image:  AssetImage("assets/album7.jpg"),
+                            image: AssetImage("assets/album7.jpg"),
                           ),
-                           SizedBox(width: 16),
+                          SizedBox(width: 16),
                           AlbumCard(
                             label: 'Motivation Mix',
-                            image:  AssetImage("assets/album2.jpg"),
+                            image: AssetImage("assets/album2.jpg"),
                           ),
-                           SizedBox(width: 16),
+                          SizedBox(width: 16),
                           AlbumCard(
                             label: 'Top 50 global',
-                            image:  AssetImage("assets/top50.jpg"),
+                            image: AssetImage("assets/top50.jpg"),
                           ),
-                           SizedBox(width: 16),
+                          SizedBox(width: 16),
                           AlbumCard(
                             label: 'Power Gaming',
-                            image:  AssetImage("assets/album1.jpg"),
+                            image: AssetImage("assets/album1.jpg"),
                           ),
-                           SizedBox(width: 16),
+                          SizedBox(width: 16),
                           AlbumCard(
                             label: 'Top songs-global',
-                            image:  AssetImage("assets/album9.jpg"),
+                            image: AssetImage("assets/album9.jpg"),
                           ),
                         ],
                       ),
                     ),
-                     SizedBox(height: 32),
-                     Padding(
+                    SizedBox(height: 32),
+                    Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Column(
                         children: [
@@ -158,7 +159,7 @@ class _HomeViewState extends State<HomeView> {
                         ],
                       ),
                     ),
-                     Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
@@ -203,8 +204,8 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ],
                     ),
-                     SizedBox(width: 16),
-                     Column(
+                    SizedBox(width: 16),
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
@@ -247,9 +248,57 @@ class _HomeViewState extends State<HomeView> {
                             ],
                           ),
                         ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0 * 2),
+                          child: Text(
+                            "Your Favorites Artists",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                        SingleChildScrollView(
+                          physics: BouncingScrollPhysics(),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              ArtisteCircle(
+                                imagePath: "assets/abm23.jpg",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/ni.jpg",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/profil_aya.jpg.png",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/profil_cardi.jpeg",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/profil_nicki.jpeg",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/profil_ice.jpeg",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/profil_doja.jpeg",
+                              ),
+                              SizedBox(width: 16),
+                              ArtisteCircle(
+                                imagePath: "assets/profil_damso.jpeg",
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
-                     SizedBox(height: 16),
+                    SizedBox(height: 18),
                   ],
                 ),
               ),
