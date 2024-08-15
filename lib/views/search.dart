@@ -64,6 +64,11 @@ class _SearchViewState extends State<SearchView> {
                   ),
                   // textfield
                   child: TextField(
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
                     decoration: InputDecoration(
                       fillColor: Colors.white,
                       prefixIcon: Padding(
