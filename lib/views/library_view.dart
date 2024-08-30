@@ -20,14 +20,15 @@ class _LibraryViewState extends State<LibraryView> {
   bool showTopBar = false;
   bool isLiked = false;
 
-  List<PlayModel> play = [];
+  // List<PlayModel> play = [];
 
-  void _getPlayModel() {
-    play = PlayModel.getPlayModel();
-  }
+  // void _getPlayModel() {
+  //   play = PlayModel.getPlayModel();
+  // }
 
   @override
   void initState() {
+    // _getPlayModel;
     imageSize = initialSize;
     scrollController = ScrollController()
       ..addListener(() {
@@ -53,7 +54,7 @@ class _LibraryViewState extends State<LibraryView> {
   @override
   Widget build(BuildContext context) {
     final cardSize = MediaQuery.of(context).size.width / 2 - 32;
-    _getPlayModel;
+    // _getPlayModel;
     return Scaffold(
       body: Stack(
         children: [
@@ -169,121 +170,58 @@ class _LibraryViewState extends State<LibraryView> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // Text(
-                        //     "Laborum commodo irure nostrud Lorem ipsum. Aute deserunt irure excepteur duis quis est labore cillum aliqua do esse tempor exercitation aliquip. Nulla qui esse aliqua non cupidatat. Cupidatat dolor ullamco ."),
                         SizedBox(height: 18),
-
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(vertical: 16),
-                        //   child: Row(
-                        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //     children: [
-                        //       AlbumCard(
-                        //         size: cardSize,
-                        //         label: "Get Turnt",
-                        //         image: AssetImage("assets/album3.jpg"),
-                        //       ),
-                        //       AlbumCard(
-                        //         size: cardSize,
-                        //         label: "Get Turnt",
-                        //         image: AssetImage("assets/album5.jpg"),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(vertical: 16),
-                        //   child: Row(
-                        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //     children: [
-                        //       AlbumCard(
-                        //         size: cardSize,
-                        //         label: "Get Turnt",
-                        //         image: AssetImage("assets/album6.jpg"),
-                        //       ),
-                        //       AlbumCard(
-                        //         size: cardSize,
-                        //         label: "Get Turnt",
-                        //         image: AssetImage("assets/album9.jpg"),
-
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(vertical: 16),
-                        //   child: Row(
-                        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //     children: [
-                        //       AlbumCard(
-                        //         size: cardSize,
-                        //         label: "Get Turnt",
-                        //         image: AssetImage("assets/album10.jpg"),
-
-                        //       ),
-                        //       AlbumCard(
-                        //         size: cardSize,
-                        //         label: "Get Turnt",
-                        //         image: AssetImage("assets/album4.jpg"),
-
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-
-                        ListView.builder(
-                          physics: BouncingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              // shape: RoundedRectangleBorder(
-                              //   borderRadius: BorderRadius.circular(18),
-                              // ),
-                              title: Text(
-                                // play[index].title,
-                                "Music name",
-                              ),
-                              subtitle: Text(
-                                // play[index].subTitle,
-                                "Artist",
-                              ),
-                              leading: Container(
-                                height: 70,
-                                width: 70,
-                                child: Image(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    // play[index].imagePath,
-                                    "assets/abm17.jpg",
-                                  ),
-                                ),
-                              ),
-                              trailing: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        isLiked = !isLiked;
-                                      });
-                                    },
-                                    child: Icon(
-                                      isLiked
-                                          ? Icons.check_circle
-                                          : Icons.add_circle_outline_sharp,
-                                      color:
-                                          isLiked ? Colors.green : Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 20),
-                                  Icon(Icons.more_vert),
-                                ],
-                              ),
-                            );
-                          },
-                          // itemCount: play.length,
-                          itemCount: 10,
-                          shrinkWrap: true,
+                        PlayModel(
+                          imagePath: "assets/abm19.jpg",
+                          title: "No lo sé",
+                          subTitle: 'Lacrim',
                         ),
+                        PlayModel(
+                          imagePath: "assets/abm20.jpg",
+                          title: "Va va voum",
+                          subTitle: 'Nicki Minaj',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm21.jpg",
+                          title: "Bodack Yellow",
+                          subTitle: 'Cardi B',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm22.jpg",
+                          title: "Pilule Violette",
+                          subTitle: 'Gims',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm23.jpg",
+                          title: "Bâtiment",
+                          subTitle: 'Niska',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm24.jpg",
+                          title: "SMS",
+                          subTitle: 'Aya Nakamura',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm25.jpg",
+                          title: "Mami Wata",
+                          subTitle: 'Tiakola ft Gazo',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm26.jpg",
+                          title: "Think U The Shit",
+                          subTitle: 'Ice Spie',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm16.jpg",
+                          title: "My Crush",
+                          subTitle: 'Angèle',
+                        ),
+                        PlayModel(
+                          imagePath: "assets/abm15.jpg",
+                          title: "Gentleman 2.0",
+                          subTitle: 'Dadju',
+                        ),
+                        SizedBox(height: 18),
                       ],
                     ),
                   ),

@@ -1,81 +1,71 @@
-class PlayModel {
-  String imagePath;
-  String title;
-  String subTitle;
-  bool isLiked;
+// ignore_for_file: sized_box_for_whitespace
+import 'package:flutter/material.dart';
 
+class PlayModel extends StatefulWidget {
   PlayModel({
+    super.key,
     required this.imagePath,
     required this.subTitle,
     required this.title,
-    required this.isLiked,
   });
 
-  static List<PlayModel> getPlayModel() {
-    List<PlayModel> play = [];
+  String title;
 
-    play.add(PlayModel(
-      imagePath: "assets/ni.jpg",
-      subTitle: "Ninho",
-      title: "Bad",
-      isLiked: false,
-    ));
+  String subTitle;
 
-    play.add(PlayModel(
-      imagePath: "assets/album13.jpg",
-      subTitle: "Gims",
-      title: "Corazon",
-      isLiked: false,
-    ));
+  String imagePath;
 
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
+  @override
+  State<PlayModel> createState() => _PlayModelState();
+}
 
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
+class _PlayModelState extends State<PlayModel> {
+  bool isLiked = false;
 
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
-
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
-
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
-
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
-
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
-
-    // play.add(PlayModel(
-    //   imagePath: imagePath,
-    //   subTitle: subTitle,
-    //   title: title,
-    // ));
-
-    return play;
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      // shape: RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.circular(18),
+      // ),
+      title: Text(
+        widget.title,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      subtitle: Text(
+        widget.subTitle,
+        style: TextStyle(
+          color: Colors.grey,
+        ),
+      ),
+      leading: Container(
+        height: 70,
+        width: 70,
+        child: Image(
+          fit: BoxFit.cover,
+          image: AssetImage(widget.imagePath),
+        ),
+      ),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                isLiked = !isLiked;
+              });
+            },
+            child: Icon(
+              isLiked ? Icons.check_circle : Icons.add_circle_outline_sharp,
+              color: isLiked ? Colors.green : Colors.white,
+            ),
+          ),
+          SizedBox(width: 20),
+          Icon(Icons.more_vert),
+        ],
+      ),
+    );
   }
 }
