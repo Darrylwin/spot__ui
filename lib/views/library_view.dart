@@ -1,5 +1,6 @@
 // ignore_for_file: prefer__ructors, prefer__literals_to_create_immutables, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
+import '../models/play_model.dart';
 import '../widgets/album_card.dart';
 
 class LibraryView extends StatefulWidget {
@@ -18,6 +19,12 @@ class _LibraryViewState extends State<LibraryView> {
   double containerInitialHeight = 500;
   double imageOpacity = 1;
   bool showTopBar = false;
+
+  List<PlayModel> play = [];
+
+  void _getPlayModel() {
+    play = PlayModel.getPlayModel();
+  }
 
   @override
   void initState() {
@@ -46,6 +53,7 @@ class _LibraryViewState extends State<LibraryView> {
   @override
   Widget build(BuildContext context) {
     final cardSize = MediaQuery.of(context).size.width / 2 - 32;
+    _getPlayModel;
     return Scaffold(
       body: Stack(
         children: [
@@ -164,10 +172,6 @@ class _LibraryViewState extends State<LibraryView> {
                         // Text(
                         //     "Laborum commodo irure nostrud Lorem ipsum. Aute deserunt irure excepteur duis quis est labore cillum aliqua do esse tempor exercitation aliquip. Nulla qui esse aliqua non cupidatat. Cupidatat dolor ullamco ."),
                         SizedBox(height: 18),
-                        Text(
-                          "You might also like",
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
 
                         // Padding(
                         //   padding: EdgeInsets.symmetric(vertical: 16),
@@ -234,8 +238,8 @@ class _LibraryViewState extends State<LibraryView> {
                               // shape: RoundedRectangleBorder(
                               //   borderRadius: BorderRadius.circular(18),
                               // ),
-                              title: Text("Angel"),
-                              subtitle: Text("Artist"),
+                              title: Text(play[index].title),
+                              subtitle: Text(play[index].subTitle),
                               leading: Container(
                                 height: 85,
                                 width: 85,
@@ -248,13 +252,15 @@ class _LibraryViewState extends State<LibraryView> {
                                 // ),
                                 child: Image(
                                   fit: BoxFit.cover,
-                                  image: AssetImage("assets/abm14.jpg"),
+                                  image: AssetImage(
+                                    play[index].imagePath,
+                                  ),
                                 ),
                               ),
                               trailing: Icon(Icons.more_vert),
                             );
                           },
-                          itemCount: 20,
+                          itemCount: play.length,
                           shrinkWrap: true,
                         ),
                       ],
