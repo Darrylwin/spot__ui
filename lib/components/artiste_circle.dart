@@ -12,8 +12,8 @@ class ArtisteCircle extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 100,
-        width: 100,
+        height: 85,
+        width: 85,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
