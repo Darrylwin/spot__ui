@@ -1,7 +1,6 @@
-// ignore_for_file: prefer__ructors, prefer__literals_to_create_immutables, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer__ructors, prefer__literals_to_create_immutables, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import '../models/play_model.dart';
-import '../widgets/album_card.dart';
 
 class LibraryView extends StatefulWidget {
   final ImageProvider image;
@@ -19,6 +18,7 @@ class _LibraryViewState extends State<LibraryView> {
   double containerInitialHeight = 500;
   double imageOpacity = 1;
   bool showTopBar = false;
+  bool isLiked = false;
 
   List<PlayModel> play = [];
 
@@ -238,29 +238,50 @@ class _LibraryViewState extends State<LibraryView> {
                               // shape: RoundedRectangleBorder(
                               //   borderRadius: BorderRadius.circular(18),
                               // ),
-                              title: Text(play[index].title),
-                              subtitle: Text(play[index].subTitle),
+                              title: Text(
+                                // play[index].title,
+                                "Music name",
+                              ),
+                              subtitle: Text(
+                                // play[index].subTitle,
+                                "Artist",
+                              ),
                               leading: Container(
-                                height: 85,
-                                width: 85,
-                                // decoration: BoxDecoration(
-                                //   // shape: BoxShape.circle,
-                                //   image: DecorationImage(
-                                //     image: AssetImage("assets/abm14.jpg"),
-                                //     fit: BoxFit.cover,
-                                //   ),
-                                // ),
+                                height: 70,
+                                width: 70,
                                 child: Image(
                                   fit: BoxFit.cover,
                                   image: AssetImage(
-                                    play[index].imagePath,
+                                    // play[index].imagePath,
+                                    "assets/abm17.jpg",
                                   ),
                                 ),
                               ),
-                              trailing: Icon(Icons.more_vert),
+                              trailing: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        isLiked = !isLiked;
+                                      });
+                                    },
+                                    child: Icon(
+                                      isLiked
+                                          ? Icons.check_circle
+                                          : Icons.add_circle_outline_sharp,
+                                      color:
+                                          isLiked ? Colors.green : Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(width: 20),
+                                  Icon(Icons.more_vert),
+                                ],
+                              ),
                             );
                           },
-                          itemCount: play.length,
+                          // itemCount: play.length,
+                          itemCount: 10,
                           shrinkWrap: true,
                         ),
                       ],
