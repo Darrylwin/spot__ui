@@ -28,7 +28,9 @@ class _ProfileViewState extends State<ProfileView> {
           //     ),
           //   ),
           // ),
-          child: AlbumRectangle(imagePath: "assets/album1.jpg"),
+          child: AlbumRectangle(
+            image: AssetImage("assets/album1.jpg"),
+          ),
         ),
       ],
     );

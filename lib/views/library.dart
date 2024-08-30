@@ -90,7 +90,7 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Liked Songs',
                           message: 'Playlist . 400 Songs',
                           content: AlbumRectangle(
-                            imagePath: "assets/liked.jpg",
+                            image: AssetImage("assets/liked.jpg"),
                           ),
                         ),
                         LibraryCard(
@@ -104,14 +104,14 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Your Episodes',
                           message: 'Saved & downloaded episodes',
                           content: AlbumRectangle(
-                            imagePath: "assets/abm19.jpg",
+                            image: AssetImage("assets/abm19.jpg"),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'On repeat',
                           message: 'Playlist . Made for You',
                           content: AlbumRectangle(
-                            imagePath: "assets/on_repeat.jpg",
+                            image: AssetImage("assets/on_repeat.jpg"),
                           ),
                         ),
                         LibraryCard(
@@ -125,21 +125,21 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Ni (Extension)',
                           message: 'Album . Ninho',
                           content: AlbumRectangle(
-                            imagePath: "assets/ni.jpg",
+                            image: AssetImage("assets/ni.jpg"),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'This is Gims',
                           message: 'Playlist',
                           content: AlbumRectangle(
-                            imagePath: "assets/this_gims.jpg",
+                            image: AssetImage("assets/this_gims.jpg"),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'Daily Mix 5',
                           message: 'Playlist . Made for you',
                           content: AlbumRectangle(
-                            imagePath: "assets/mix5.png",
+                            image: AssetImage("assets/mix5.png"),
                           ),
                         ),
                         LibraryCard(
@@ -160,21 +160,21 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Imen es Radio',
                           message: 'Playlist . Made for you',
                           content: AlbumRectangle(
-                            imagePath: "assets/top_imen.jpeg",
+                            image: AssetImage("assets/top_imen.jpeg"),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'This is Ice Spice',
                           message: 'Playlist . Spotify',
                           content: AlbumRectangle(
-                            imagePath: "assets/top_ice.jpg",
+                            image: AssetImage("assets/top_ice.jpg"),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'West New Twist',
                           message: 'Playlist . Spotify',
                           content: AlbumRectangle(
-                            imagePath: "assets/abm26.jpg",
+                            image: AssetImage("assets/abm26.jpg"),
                           ),
                         ),
                         LibraryCard(
@@ -188,7 +188,7 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Jefe',
                           message: 'Album . Ninho',
                           content: AlbumRectangle(
-                            imagePath: "assets/abm18.jpg",
+                            image: AssetImage("assets/abm18.jpg"),
                           ),
                         ),
                         LibraryCard(
@@ -209,7 +209,7 @@ class _LibraryState extends State<LibraryView> {
                             bolledText: "This is Ninho",
                             message: "Made for you",
                             content: AlbumRectangle(
-                              imagePath: "assets/this_ninho.jpg",
+                              image: AssetImage("assets/this_ninho.jpg"),
                             )),
                         LibraryCard(
                           bolledText: 'Add Artist',
@@ -219,7 +219,9 @@ class _LibraryState extends State<LibraryView> {
                         LibraryCard(
                           bolledText: 'Add Podcast',
                           message: 'Artist',
-                          content: AlbumRectangle(imagePath: "assets/plus.png"),
+                          content: AlbumRectangle(
+                            image: AssetImage("assets/plus.png"),
+                          ),
                         ),
                         SizedBox(height: 18),
                       ],
