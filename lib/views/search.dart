@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import '../widgets/browse_card.dart';
 import '../components/genre_card.dart';
@@ -19,7 +21,6 @@ class _SearchViewState extends State<SearchView> {
   @override
   void initState() {
     _getGenres();
-    // super.initState();
   }
 
   @override
@@ -126,19 +127,6 @@ class _SearchViewState extends State<SearchView> {
                                       genre[index].bgImage,
                                       fit: BoxFit.cover,
                                     ),
-                                    // Positioned(
-                                    //   bottom: 10,
-                                    //   child: Text(
-                                    //     genre[index].text,
-                                    //     style: TextStyle(
-                                    //       color: Colors.white,
-                                    //       fontSize: 16,
-                                    //       fontWeight: FontWeight.bold,
-                                    //     ),
-                                    //   ),
-                                    // ),
-                                    // ],
-                                    // ),
                                   ),
                                 );
                               },

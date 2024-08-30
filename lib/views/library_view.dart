@@ -4,7 +4,12 @@ import '../models/play_model.dart';
 
 class LibraryView extends StatefulWidget {
   final ImageProvider image;
-  LibraryView({super.key, required this.image});
+  final Color color;
+  LibraryView({
+    super.key,
+    required this.image,
+    required this.color,
+  });
 
   @override
   State<LibraryView> createState() => _LibraryViewState();
@@ -18,17 +23,9 @@ class _LibraryViewState extends State<LibraryView> {
   double containerInitialHeight = 500;
   double imageOpacity = 1;
   bool showTopBar = false;
-  bool isLiked = false;
-
-  // List<PlayModel> play = [];
-
-  // void _getPlayModel() {
-  //   play = PlayModel.getPlayModel();
-  // }
 
   @override
   void initState() {
-    // _getPlayModel;
     imageSize = initialSize;
     scrollController = ScrollController()
       ..addListener(() {
@@ -54,7 +51,6 @@ class _LibraryViewState extends State<LibraryView> {
   @override
   Widget build(BuildContext context) {
     final cardSize = MediaQuery.of(context).size.width / 2 - 32;
-    // _getPlayModel;
     return Scaffold(
       body: Stack(
         children: [
@@ -62,7 +58,7 @@ class _LibraryViewState extends State<LibraryView> {
             height: containerHeight,
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.center,
-            color: Color.fromARGB(255, 104, 44, 189),
+            color: widget.color,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -121,10 +117,6 @@ class _LibraryViewState extends State<LibraryView> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // Text(
-                                //   style: Theme.of(context).textTheme.bodySmall,
-                                //   'Consequat aliquip dolor consectetur sit veniam. Consectetur ipsum qui nostrud pariatur tempor minim dolor nisi elit elit in est',
-                                // ),
                                 SizedBox(height: 10),
                                 Row(
                                   children: [
@@ -229,14 +221,13 @@ class _LibraryViewState extends State<LibraryView> {
               ),
             ),
           ),
-          // appbar
           Positioned(
             child: Container(
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 250),
                 color: showTopBar
-                    ? Color.fromARGB(255, 104, 44, 189).withOpacity(1)
-                    : Color.fromARGB(255, 104, 44, 189).withOpacity(0),
+                    ? widget.color.withOpacity(1)
+                    : widget.color.withOpacity(0),
                 padding: EdgeInsets.symmetric(
                   horizontal: 18,
                   vertical: 10,
@@ -251,7 +242,6 @@ class _LibraryViewState extends State<LibraryView> {
                       children: [
                         Positioned(
                           left: 0,
-                          // top: 8,
                           child: GestureDetector(
                             onTap: () {
                               Navigator.pop(context);

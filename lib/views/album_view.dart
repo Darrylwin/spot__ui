@@ -230,7 +230,6 @@ class _AlbumViewState extends State<AlbumView> {
               ),
             ),
           ),
-          // appbar
           Positioned(
             child: Container(
               child: AnimatedContainer(
@@ -252,7 +251,6 @@ class _AlbumViewState extends State<AlbumView> {
                       children: [
                         Positioned(
                           left: 0,
-                          // top: 8,
                           child: GestureDetector(
                             onTap: () {
                               Navigator.pop(context);

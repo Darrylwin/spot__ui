@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 import '../components/album_rectangle.dart';
@@ -14,20 +16,9 @@ class LibraryView extends StatefulWidget {
 }
 
 class _LibraryState extends State<LibraryView> {
-  // List<LibraryCard> library = [];
-
-  // void _getLibraries() {
-  //   library = LibraryCard.getLibraries();
-  // }
-
-  // @override
-  // void initState() {
-  //   _getLibraries(); // super.initState();
-  // }
 
   @override
   Widget build(BuildContext context) {
-    // _getLibraries();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -52,15 +43,15 @@ class _LibraryState extends State<LibraryView> {
                         Text(
                           "Your Library",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 28, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
                     Row(
                       children: [
-                        Icon(Icons.search_sharp, size: 43, weight: 45),
+                        Icon(Icons.search_sharp, size: 38, weight: 45),
                         SizedBox(width: 8),
-                        Icon(Icons.add, size: 43, weight: 45),
+                        Icon(Icons.add, size: 38, weight: 45),
                       ],
                     )
                   ],
@@ -71,18 +62,6 @@ class _LibraryState extends State<LibraryView> {
                   children: [
                     SizedBox(height: 20),
                     RecentsRow(),
-                    // Column(
-                    //   children: [
-                    //     // ListView.separated(
-                    //     //   itemBuilder: librarySection,
-                    //     //   itemCount: library.length,
-                    //     //   separatorBuilder: (context, index) => SizedBox(
-                    //     //     height: 14,
-                    //     //   ),
-                    //     //   scrollDirection: Axis.vertical,
-                    //     // ),
-                    //   ],
-                    // ),
                     SizedBox(height: 16),
                     Column(
                       children: [
@@ -91,6 +70,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist . 400 Songs',
                           content: AlbumRectangle(
                             image: AssetImage("assets/liked.jpg"),
+                            color: Color.fromARGB(255, 104, 44, 189),
                           ),
                         ),
                         LibraryCard(
@@ -105,6 +85,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Saved & downloaded episodes',
                           content: AlbumRectangle(
                             image: AssetImage("assets/abm19.jpg"),
+                            color: Color.fromARGB(255, 12, 47, 4),
                           ),
                         ),
                         LibraryCard(
@@ -112,6 +93,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist . Made for You',
                           content: AlbumRectangle(
                             image: AssetImage("assets/on_repeat.jpg"),
+                            color: Color.fromARGB(255, 89, 35, 165),
                           ),
                         ),
                         LibraryCard(
@@ -126,6 +108,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Album . Ninho',
                           content: AlbumRectangle(
                             image: AssetImage("assets/ni.jpg"),
+                            color: Color.fromARGB(255, 152, 85, 9),
                           ),
                         ),
                         LibraryCard(
@@ -133,6 +116,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist',
                           content: AlbumRectangle(
                             image: AssetImage("assets/this_gims.jpg"),
+                            color: Color.fromARGB(212, 200, 196, 205),
                           ),
                         ),
                         LibraryCard(
@@ -140,6 +124,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist . Made for you',
                           content: AlbumRectangle(
                             image: AssetImage("assets/mix5.png"),
+                            color: Color.fromARGB(255, 181, 182, 171),
                           ),
                         ),
                         LibraryCard(
@@ -161,6 +146,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist . Made for you',
                           content: AlbumRectangle(
                             image: AssetImage("assets/top_imen.jpeg"),
+                            color: Color.fromARGB(255, 248, 247, 249),
                           ),
                         ),
                         LibraryCard(
@@ -168,6 +154,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist . Spotify',
                           content: AlbumRectangle(
                             image: AssetImage("assets/top_ice.jpg"),
+                            color: Color.fromARGB(255, 237, 236, 239),
                           ),
                         ),
                         LibraryCard(
@@ -175,6 +162,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Playlist . Spotify',
                           content: AlbumRectangle(
                             image: AssetImage("assets/abm26.jpg"),
+                            color: Color.fromARGB(255, 119, 167, 195),
                           ),
                         ),
                         LibraryCard(
@@ -189,6 +177,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Album . Ninho',
                           content: AlbumRectangle(
                             image: AssetImage("assets/abm18.jpg"),
+                            color: Color.fromARGB(176, 121, 101, 200),
                           ),
                         ),
                         LibraryCard(
@@ -210,6 +199,7 @@ class _LibraryState extends State<LibraryView> {
                             message: "Made for you",
                             content: AlbumRectangle(
                               image: AssetImage("assets/this_ninho.jpg"),
+                              color: Color.fromARGB(255, 103, 72, 10),
                             )),
                         LibraryCard(
                           bolledText: 'Add Artist',
@@ -221,6 +211,7 @@ class _LibraryState extends State<LibraryView> {
                           message: 'Artist',
                           content: AlbumRectangle(
                             image: AssetImage("assets/plus.png"),
+                            color: Colors.black,
                           ),
                         ),
                         SizedBox(height: 18),
@@ -235,41 +226,6 @@ class _LibraryState extends State<LibraryView> {
       ),
     );
   }
-
-  // Widget? librarySection(context, index) {
-  //   ///////////////
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.start,
-  //     children: [
-  //       Container(
-  //         height: 100,
-  //         width: 100,
-  //         child: Image.asset(
-  //           library[index].imagePath,
-  //         ),
-  //       ),
-  //       SizedBox(width: 16),
-  //       Column(
-  //         // crossAxisAlignment: CrossAxisAlignment.start,
-  //         mainAxisAlignment: MainAxisAlignment.center,
-  //         children: [
-  //           Text(
-  //             library[index].bolledText,
-  //             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-  //           ),
-  //           SizedBox(height: 8),
-  //           Text(
-  //             library[index].message,
-  //             style: TextStyle(
-  //               fontSize: 18,
-  //               color: Color.fromARGB(255, 138, 136, 136),
-  //             ),
-  //           ),
-  //         ],
-  //       ),
-  //     ],
-  //   );
-  // }
 
   // methode qui retourne la section des filtres
   SingleChildScrollView filterSection() {
@@ -286,6 +242,10 @@ class _LibraryState extends State<LibraryView> {
           Filter(text: "Albums"),
           SizedBox(width: 10),
           Filter(text: "Artists"),
+          SizedBox(width: 10),
+          Filter(text: "Musics"),
+          SizedBox(width: 10),
+          Filter(text: "Prods"),
         ],
       ),
     );

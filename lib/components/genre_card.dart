@@ -46,19 +46,4 @@ class GenreCard {
     return genre;
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     // height: 225,
-  //     width: 125,
-  //     child: Image.asset(
-  //       bgImage,
-  //       fit: BoxFit.cover,
-  //     ),
-  //     decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(10),
-  //     ),
-  //   );
-  // }
-
 }

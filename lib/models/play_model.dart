@@ -25,9 +25,6 @@ class _PlayModelState extends State<PlayModel> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      // shape: RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.circular(18),
-      // ),
       title: Text(
         widget.title,
         style: TextStyle(
