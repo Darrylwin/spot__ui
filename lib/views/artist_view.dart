@@ -174,150 +174,8 @@ class _ArtistViewState extends State<ArtistView> {
                       ),
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.all(16),
-                    color: Colors.black,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 18),
-                        PlayModel(
-                          imagePath: "assets/abm20.jpg",
-                          title: "Va va voum",
-                          subTitle: 'Nicki Minaj',
-                        ),
-                        PlayModel(
-                          imagePath: "assets/abm21.jpg",
-                          title: "Bodack Yellow",
-                          subTitle: 'Cardi B',
-                        ),
-                        PlayModel(
-                          imagePath: "assets/abm24.jpg",
-                          title: "SMS",
-                          subTitle: 'Aya Nakamura',
-                        ),
-                        PlayModel(
-                          imagePath: "assets/abm25.jpg",
-                          title: "Mami Wata",
-                          subTitle: 'Tiakola ft Gazo',
-                        ),
-                        PlayModel(
-                          imagePath: "assets/abm26.jpg",
-                          title: "Think U The Shit",
-                          subTitle: 'Ice Spie',
-                        ),
-                        PlayModel(
-                          imagePath: "assets/abm18.jpg",
-                          title: "Jefe",
-                          subTitle: 'Ninho',
-                        ),
-                        SizedBox(height: 23),
-                        Text(
-                          "Artist Pick",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                        SizedBox(height: 23),
-
-                        //artist pick section
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 200,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: widget.image,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                top: 20,
-                                left: 20,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(22),
-                                  child: Container(
-                                    padding: EdgeInsets.all(1),
-                                    color: Colors.white,
-                                    // width: 200,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          height: 30,
-                                          width: 30,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            image: DecorationImage(
-                                              image: widget.image,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(width: 10),
-                                        Text(
-                                          'ENOUGH!  MIAMI IS OUT NOW',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    ListTile(
-                                      title: Text("Artist - Music name"),
-                                      subtitle: Text("Playlist"),
-                                      leading: Container(
-                                        height: 70,
-                                        width: 70,
-                                        child: Image(
-                                          image: AssetImage("assets/abm25.jpg"),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 23),
-                        //popular releases section
-                        Text(
-                          "Popular Realeases",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                        SizedBox(height: 23),
-                        LibraryCard(
-                          bolledText: "On dat Money (With Cardi B)",
-                          content: AlbumRectangle(
-                            image: AssetImage("assets/abm17.jpg"),
-                            color: Colors.pink,
-                            dimensions: 89,
-                          ),
-                          message: "LatestRelease . Single",
-                        ),
-                        LibraryCard(
-                          bolledText: "Inversion Of (With Cardi B)",
-                          content: AlbumRectangle(
-                            image: AssetImage("assets/abm21.jpg"),
-                            color: Colors.blue.shade300,
-                            dimensions: 89,
-                          ),
-                          message: "LatestRelease . Single",
-                        ),
-                      ],
-                    ),
-                  ),
+                  // listof songs section
+                  listOfSongsSection(context),
                 ],
               ),
             ),
@@ -404,6 +262,257 @@ class _ArtistViewState extends State<ArtistView> {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Container listOfSongsSection(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16),
+      color: Colors.black,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 18),
+          PlayModel(
+            imagePath: "assets/abm20.jpg",
+            title: "Va va voum",
+            subTitle: 'Nicki Minaj',
+          ),
+          PlayModel(
+            imagePath: "assets/abm21.jpg",
+            title: "Bodack Yellow",
+            subTitle: 'Cardi B',
+          ),
+          PlayModel(
+            imagePath: "assets/abm24.jpg",
+            title: "SMS",
+            subTitle: 'Aya Nakamura',
+          ),
+          PlayModel(
+            imagePath: "assets/abm25.jpg",
+            title: "Mami Wata",
+            subTitle: 'Tiakola ft Gazo',
+          ),
+          PlayModel(
+            imagePath: "assets/abm26.jpg",
+            title: "Think U The Shit",
+            subTitle: 'Ice Spie',
+          ),
+          PlayModel(
+            imagePath: "assets/abm18.jpg",
+            title: "Jefe",
+            subTitle: 'Ninho',
+          ),
+          SizedBox(height: 23),
+          Text(
+            "Artist Pick",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(height: 23),
+
+          //artist pick section
+          artistPickSection(context),
+          SizedBox(height: 23),
+          //popular releases section
+          Text(
+            "Popular Realeases",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(height: 23),
+          LibraryCard(
+            bolledText: "On dat Money (With Cardi B)",
+            content: AlbumRectangle(
+              image: AssetImage("assets/abm17.jpg"),
+              color: Colors.pink,
+              dimensions: 89,
+            ),
+            message: "LatestRelease . Single",
+          ),
+          LibraryCard(
+            bolledText: "Inversion Of (With Cardi B)",
+            content: AlbumRectangle(
+              image: AssetImage("assets/abm21.jpg"),
+              color: Colors.blue.shade300,
+              dimensions: 89,
+            ),
+            message: "LatestRelease . Single",
+          ),
+          SizedBox(height: 23),
+          //About section
+          Text(
+            "About",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(height: 23),
+          aboutSection(context),
+        ],
+      ),
+    );
+  }
+
+  Container artistPickSection(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 200,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: widget.image,
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: 20,
+            left: 20,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(22),
+              child: Container(
+                padding: EdgeInsets.all(1),
+                color: Colors.white,
+                // width: 200,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: widget.image,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      'ENOUGH!  MIAMI IS OUT NOW',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ListTile(
+                  title: Text("Artist - Music name"),
+                  subtitle: Text("Playlist"),
+                  leading: Container(
+                    height: 70,
+                    width: 70,
+                    child: Image(
+                      image: AssetImage("assets/abm25.jpg"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container aboutSection(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 390,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: widget.image,
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: 20,
+            left: 20,
+            child: Row(
+              children: [
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    // image: DecorationImage(
+                    //   fit: BoxFit.cover,
+                    //   image: AssetImage(
+                    //     "assets/certified.png",
+                    //   ),
+                    // ),
+                  ),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      "assets/certified.png",
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 4),
+                Text(
+                  "Verified Artist",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: "29,091,598 ",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "MONTHLY LISTENERS",
+                        style: TextStyle(
+                          color: Colors.grey.shade200,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 9),
+                Text(
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  "Rapper and entertainer Cardi B draws from a seemingly never-ending supply of confidence, charisma, and ...",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
         ],
       ),
     );
