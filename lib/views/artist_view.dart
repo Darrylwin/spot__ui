@@ -211,61 +211,78 @@ class _ArtistViewState extends State<ArtistView> {
                               fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         SizedBox(height: 23),
+
+                        //artist pick section
                         Container(
                           width: MediaQuery.of(context).size.width,
                           height: 200,
                           decoration: BoxDecoration(
-                            color: Colors.pink,
                             image: DecorationImage(
                               image: widget.image,
                               fit: BoxFit.cover,
                             ),
                           ),
-                          // child: Row(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          //   children: [
-                          //     Container(
-                          //       child: Text("Hello"),
-                          //     ),
-                          //     ListTile(
-                          //       title: Text("Artist name"),
-                          //       subtitle: Text("Realisation"),
-                          //       leading: Container(
-                          //         height: 70,
-                          //         width: 70,
-                          //         child: Image(
-                          //           image: widget.image,
-                          //         ),
-                          //       ),
-                          //     ),
-                          //   ],
-                          // ),
-
                           child: Stack(
                             children: [
                               Positioned(
-                                top: .5,
-                                child: Container(
-                                  child: Text('Hello'),
-                                ),
-                              ),
-                              Positioned(
-                                bottom: 0.7,
-                                child: ListTile(
-                                  title: Text("Artist name"),
-                                  subtitle: Text("Realisation"),
-                                  leading: Container(
-                                    height: 70,
-                                    width: 70,
-                                    child: Image(
-                                      image: widget.image,
+                                top: 20,
+                                left: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(22),
+                                  child: Container(
+                                    padding: EdgeInsets.all(1),
+                                    color: Colors.white,
+                                    // width: 200,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          height: 30,
+                                          width: 30,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            image: DecorationImage(
+                                              image: widget.image,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'ENOUGH!  MIAMI IS OUT NOW',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    ListTile(
+                                      title: Text("Artist - Music name"),
+                                      subtitle: Text("Playlist"),
+                                      leading: Container(
+                                        height: 70,
+                                        width: 70,
+                                        child: Image(
+                                          image: AssetImage("assets/abm25.jpg"),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
                         ),
+                        SizedBox(height: 23),
                       ],
                     ),
                   ),
