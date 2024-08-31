@@ -1,5 +1,7 @@
 // ignore_for_file: prefer__ructors, prefer__literals_to_create_immutables, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+import 'package:spot__ui/components/album_rectangle.dart';
+import 'package:spot__ui/components/library_card.dart';
 import '../models/play_model.dart';
 
 class ArtistView extends StatefulWidget {
@@ -204,6 +206,11 @@ class _ArtistViewState extends State<ArtistView> {
                           title: "Think U The Shit",
                           subTitle: 'Ice Spie',
                         ),
+                        PlayModel(
+                          imagePath: "assets/abm18.jpg",
+                          title: "Jefe",
+                          subTitle: 'Ninho',
+                        ),
                         SizedBox(height: 23),
                         Text(
                           "Artist Pick",
@@ -283,6 +290,31 @@ class _ArtistViewState extends State<ArtistView> {
                           ),
                         ),
                         SizedBox(height: 23),
+                        //popular releases section
+                        Text(
+                          "Popular Realeases",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                        SizedBox(height: 23),
+                        LibraryCard(
+                          bolledText: "On dat Money (With Cardi B)",
+                          content: AlbumRectangle(
+                            image: AssetImage("assets/abm17.jpg"),
+                            color: Colors.pink,
+                            dimensions: 89,
+                          ),
+                          message: "LatestRelease . Single",
+                        ),
+                        LibraryCard(
+                          bolledText: "Inversion Of (With Cardi B)",
+                          content: AlbumRectangle(
+                            image: AssetImage("assets/abm21.jpg"),
+                            color: Colors.blue.shade300,
+                            dimensions: 89,
+                          ),
+                          message: "LatestRelease . Single",
+                        ),
                       ],
                     ),
                   ),

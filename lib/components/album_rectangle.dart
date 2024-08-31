@@ -1,15 +1,17 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import '../views/library_view.dart';
 
 class AlbumRectangle extends StatelessWidget {
-  // final String imagePath;
   final AssetImage image;
   final Color color;
+  final double dimensions;
   const AlbumRectangle({
     super.key,
-    // this.imagePath = "assets/album1.jpg",
     required this.image,
     required this.color,
+    this.dimensions = 85,
   });
 
   @override
@@ -19,13 +21,16 @@ class AlbumRectangle extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => LibraryView(image: image, color: color,),
+            builder: (context) => LibraryView(
+              image: image,
+              color: color,
+            ),
           ),
         );
       },
       child: Container(
-        height: 85,
-        width: 85,
+        height: dimensions,
+        width: dimensions,
         child: Image(
           fit: BoxFit.cover,
           image: image,

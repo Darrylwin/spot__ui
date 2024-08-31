@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-
 import '../views/artist_view.dart';
-import '../views/library_view.dart';
 
 class ArtisteCircle extends StatelessWidget {
   final AssetImage image;
   final Color color;
+  final double dimensions;
   ArtisteCircle({
     super.key,
     required this.image,
     required this.color,
+    this.dimensions = 85,
   });
 
   @override
@@ -27,8 +27,8 @@ class ArtisteCircle extends StatelessWidget {
         );
       },
       child: Container(
-        height: 85,
-        width: 85,
+        height: dimensions,
+        width: dimensions,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
