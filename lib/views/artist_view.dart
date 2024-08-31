@@ -2,7 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:spot__ui/components/album_rectangle.dart';
 import 'package:spot__ui/components/library_card.dart';
+import '../components/artiste_circle.dart';
 import '../models/play_model.dart';
+import '../widgets/song_card.dart';
 
 class ArtistView extends StatefulWidget {
   final ImageProvider image;
@@ -346,10 +348,122 @@ class _ArtistViewState extends State<ArtistView> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           SizedBox(height: 23),
-          aboutSection(context),
+          aboutSection(context), SizedBox(height: 23),
+          Text(
+            "Artists Playlists",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(height: 23),
+          artistsPlaylistSection(),
+          SizedBox(height: 23),
+          Text(
+            "Fans also like",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(height: 23),
+          fansLikesSection(),
+          SizedBox(height: 18),
         ],
       ),
     );
+  }
+
+  SingleChildScrollView artistsPlaylistSection() {
+    return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            children: [
+              SongCard(
+                image: AssetImage("assets/album12.jpg"),
+              ),
+              SizedBox(width: 16),
+              SongCard(
+                image: AssetImage("assets/album13.jpg"),
+              ),
+              SizedBox(width: 16),
+              SongCard(
+                image: AssetImage("assets/abm14.jpg"),
+              ),
+              SizedBox(width: 16),
+              SongCard(
+                image: AssetImage("assets/abm15.jpg"),
+              ),
+              SizedBox(width: 16),
+              SongCard(
+                image: AssetImage("assets/abm16.jpg"),
+              ),
+              SizedBox(width: 16),
+              SongCard(
+                image: AssetImage("assets/abm17.jpg"),
+              ),
+              SizedBox(width: 16),
+              SongCard(
+                image: AssetImage("assets/abm18.jpg"),
+              ),
+            ],
+          ),
+        );
+  }
+
+  SingleChildScrollView fansLikesSection() {
+    return SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ArtisteCircle(
+                image: AssetImage("assets/abm23.jpg"),
+                color: Color.fromARGB(255, 22, 16, 3),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/ni.jpg"),
+                color: Color.fromARGB(255, 75, 53, 3),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/profil_aya.jpg.png"),
+                color: Color.fromARGB(255, 189, 44, 44),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/profil_cardi.jpeg"),
+                color: Color.fromARGB(255, 44, 150, 189),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/profil_nicki.jpeg"),
+                color: Color.fromARGB(255, 189, 44, 165),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/profil_ice.jpeg"),
+                color: Color.fromARGB(255, 229, 218, 192),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/profil_doja.jpeg"),
+                color: Color.fromARGB(255, 13, 13, 7),
+                dimensions: 100,
+              ),
+              SizedBox(width: 16),
+              ArtisteCircle(
+                image: AssetImage("assets/profil_damso.jpeg"),
+                color: Color.fromARGB(168, 28, 18, 1),
+                dimensions: 100,
+              ),
+            ],
+          ),
+        );
   }
 
   Container artistPickSection(BuildContext context) {
