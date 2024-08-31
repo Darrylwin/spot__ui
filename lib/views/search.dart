@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import '../components/account_profile.dart';
 import '../widgets/browse_card.dart';
 import '../components/genre_card.dart';
 
@@ -42,10 +43,11 @@ class _SearchViewState extends State<SearchView> {
                     Row(
                       children: [
                         // search section
-                        CircleAvatar(
-                          radius: 23,
-                          backgroundImage: AssetImage("assets/profil.jpeg"),
-                        ),
+                        // CircleAvatar(
+                        //   radius: 23,
+                        //   backgroundImage: AssetImage("assets/profil.jpeg"),
+                        // ),
+                        AccountProfile(),
                         SizedBox(width: 13),
                         Text(
                           "Search",

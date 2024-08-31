@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../components/account_profile.dart';
 import '../components/album_rectangle.dart';
 import '../components/artiste_circle.dart';
 import '../widgets/filter.dart';
@@ -34,9 +35,13 @@ class _LibraryState extends State<LibraryView> {
                     Row(
                       children: [
                         // search section
-                        CircleAvatar(
-                          radius: 23,
-                          backgroundImage: AssetImage("assets/profil.jpeg"),
+                        // CircleAvatar(
+                        //   radius: 23,
+                        //   backgroundImage: AssetImage("assets/profil.jpeg"),
+                        // ),
+                        GestureDetector(
+                          child: AccountProfile(),
+                          // onTap: () => Drawer(),
                         ),
                         SizedBox(width: 13),
                         Text(
