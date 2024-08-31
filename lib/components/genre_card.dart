@@ -43,7 +43,34 @@ class GenreCard {
       ),
     );
 
+    genre.add(
+      GenreCard(
+        text: "#Leto",
+        bgImage: "assets/album10.jpg",
+      ),
+    );
+
+    genre.add(
+      GenreCard(
+        text: "#Leto",
+        bgImage: "assets/abm19.jpg",
+      ),
+    );
+
+    genre.add(
+      GenreCard(
+        text: "#Leto",
+        bgImage: "assets/abm20.jpg",
+      ),
+    );
+
+    genre.add(
+      GenreCard(
+        text: "#Leto",
+        bgImage: "assets/abm25.jpg",
+      ),
+    );
+
     return genre;
   }
-
 }

@@ -263,35 +263,35 @@ class _HomeViewState extends State<HomeView> {
                           child: Row(
                             children: [
                               ArtisteCircle(
-                                imagePath: "assets/abm23.jpg",
+                                image: AssetImage("assets/abm23.jpg"),color: Color.fromARGB(255, 22, 16, 3),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/ni.jpg",
+                                image: AssetImage("assets/ni.jpg"),color: Color.fromARGB(255, 75, 53, 3),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/profil_aya.jpg.png",
+                                image: AssetImage("assets/profil_aya.jpg.png"),color: Color.fromARGB(255, 189, 44, 44),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/profil_cardi.jpeg",
+                                image:AssetImage( "assets/profil_cardi.jpeg"),color: Color.fromARGB(255, 44, 150, 189),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/profil_nicki.jpeg",
+                                image: AssetImage("assets/profil_nicki.jpeg"),color: Color.fromARGB(255, 189, 44, 165),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/profil_ice.jpeg",
+                                image:AssetImage( "assets/profil_ice.jpeg"),color: Color.fromARGB(255, 229, 218, 192),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/profil_doja.jpeg",
+                                image: AssetImage("assets/profil_doja.jpeg"),color: Color.fromARGB(255, 13, 13, 7),
                               ),
                               SizedBox(width: 16),
                               ArtisteCircle(
-                                imagePath: "assets/profil_damso.jpeg",
+                                image: AssetImage("assets/profil_damso.jpeg"),color: Color.fromARGB(168, 28, 18, 1),
                               ),
                             ],
                           ),

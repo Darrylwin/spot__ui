@@ -50,11 +50,11 @@ class _SearchViewState extends State<SearchView> {
                         Text(
                           "Search",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.bold),
+                              fontSize: 28, fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
-                    Icon(Icons.camera_alt_outlined, size: 30, weight: 40)
+                    Icon(Icons.camera_alt_outlined, size: 28.3, weight: 40)
                   ],
                 ),
                 SizedBox(height: 40),

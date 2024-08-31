@@ -16,7 +16,6 @@ class LibraryView extends StatefulWidget {
 }
 
 class _LibraryState extends State<LibraryView> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +76,8 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Doja Cat',
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/abm14.jpg",
+                            image: AssetImage("assets/abm14.jpg"),
+                            color: Color.fromARGB(172, 200, 62, 161),
                           ),
                         ),
                         LibraryCard(
@@ -100,7 +100,8 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: "Aya Nakamura",
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/abm24.jpg",
+                            image: AssetImage("assets/abm24.jpg"),
+                            color: Color.fromARGB(255, 188, 176, 17),
                           ),
                         ),
                         LibraryCard(
@@ -131,14 +132,16 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Damso',
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/profil_damso.jpeg",
+                            image: AssetImage("assets/profil_damso.jpeg"),
+                            color: Color.fromARGB(255, 89, 53, 8),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'Cardi b',
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/abm17.jpg",
+                            image: AssetImage("assets/abm17.jpg"),
+                            color: Color.fromARGB(255, 189, 44, 126),
                           ),
                         ),
                         LibraryCard(
@@ -169,7 +172,8 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Tiakola',
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/profil_tiakola.jpeg",
+                            image: AssetImage("assets/profil_tiakola.jpeg"),
+                            color: Color.fromARGB(255, 43, 129, 185),
                           ),
                         ),
                         LibraryCard(
@@ -184,14 +188,16 @@ class _LibraryState extends State<LibraryView> {
                           bolledText: 'Ayra Starr',
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/profil_ayra.jpeg",
+                            image: AssetImage("assets/profil_ayra.jpeg"),
+                            color: Color.fromARGB(3, 168, 151, 19),
                           ),
                         ),
                         LibraryCard(
                           bolledText: 'Ice Spice',
                           message: 'Artist',
                           content: ArtisteCircle(
-                            imagePath: "assets/profil_ice.jpeg",
+                            color: Color.fromARGB(255, 241, 235, 221),
+                            image: AssetImage("assets/profil_ice.jpeg"),
                           ),
                         ),
                         LibraryCard(
@@ -204,7 +210,10 @@ class _LibraryState extends State<LibraryView> {
                         LibraryCard(
                           bolledText: 'Add Artist',
                           message: 'Artist',
-                          content: ArtisteCircle(imagePath: "assets/plus.png"),
+                          content: ArtisteCircle(
+                            image: AssetImage("assets/plus.png"),
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
                         ),
                         LibraryCard(
                           bolledText: 'Add Podcast',

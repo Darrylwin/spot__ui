@@ -1,23 +1,38 @@
 import 'package:flutter/material.dart';
 
+import '../views/artist_view.dart';
+import '../views/library_view.dart';
+
 class ArtisteCircle extends StatelessWidget {
-  final String imagePath;
-  const ArtisteCircle({
+  final AssetImage image;
+  final Color color;
+  ArtisteCircle({
     super.key,
-    this.imagePath = "assets/album1.jpg",
+    required this.image,
+    required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ArtistView(
+              image: image,
+              color: color,
+            ),
+          ),
+        );
+      },
       child: Container(
         height: 85,
         width: 85,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: AssetImage(imagePath),
+            image: image,
             fit: BoxFit.cover,
           ),
         ),
