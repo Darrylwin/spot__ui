@@ -9,6 +9,7 @@ import '../widgets/song_card.dart';
 class ArtistView extends StatefulWidget {
   final ImageProvider image;
   final Color color;
+
   ArtistView({
     super.key,
     required this.image,
@@ -370,100 +371,100 @@ class _ArtistViewState extends State<ArtistView> {
 
   SingleChildScrollView artistsPlaylistSection() {
     return SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            children: [
-              SongCard(
-                image: AssetImage("assets/album12.jpg"),
-              ),
-              SizedBox(width: 16),
-              SongCard(
-                image: AssetImage("assets/album13.jpg"),
-              ),
-              SizedBox(width: 16),
-              SongCard(
-                image: AssetImage("assets/abm14.jpg"),
-              ),
-              SizedBox(width: 16),
-              SongCard(
-                image: AssetImage("assets/abm15.jpg"),
-              ),
-              SizedBox(width: 16),
-              SongCard(
-                image: AssetImage("assets/abm16.jpg"),
-              ),
-              SizedBox(width: 16),
-              SongCard(
-                image: AssetImage("assets/abm17.jpg"),
-              ),
-              SizedBox(width: 16),
-              SongCard(
-                image: AssetImage("assets/abm18.jpg"),
-              ),
-            ],
+      scrollDirection: Axis.horizontal,
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        children: [
+          SongCard(
+            image: AssetImage("assets/album12.jpg"),
           ),
-        );
+          SizedBox(width: 16),
+          SongCard(
+            image: AssetImage("assets/album13.jpg"),
+          ),
+          SizedBox(width: 16),
+          SongCard(
+            image: AssetImage("assets/abm14.jpg"),
+          ),
+          SizedBox(width: 16),
+          SongCard(
+            image: AssetImage("assets/abm15.jpg"),
+          ),
+          SizedBox(width: 16),
+          SongCard(
+            image: AssetImage("assets/abm16.jpg"),
+          ),
+          SizedBox(width: 16),
+          SongCard(
+            image: AssetImage("assets/abm17.jpg"),
+          ),
+          SizedBox(width: 16),
+          SongCard(
+            image: AssetImage("assets/abm18.jpg"),
+          ),
+        ],
+      ),
+    );
   }
 
   SingleChildScrollView fansLikesSection() {
     return SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              ArtisteCircle(
-                image: AssetImage("assets/abm23.jpg"),
-                color: Color.fromARGB(255, 22, 16, 3),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/ni.jpg"),
-                color: Color.fromARGB(255, 75, 53, 3),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/profil_aya.jpg.png"),
-                color: Color.fromARGB(255, 189, 44, 44),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/profil_cardi.jpeg"),
-                color: Color.fromARGB(255, 44, 150, 189),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/profil_nicki.jpeg"),
-                color: Color.fromARGB(255, 189, 44, 165),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/profil_ice.jpeg"),
-                color: Color.fromARGB(255, 229, 218, 192),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/profil_doja.jpeg"),
-                color: Color.fromARGB(255, 13, 13, 7),
-                dimensions: 100,
-              ),
-              SizedBox(width: 16),
-              ArtisteCircle(
-                image: AssetImage("assets/profil_damso.jpeg"),
-                color: Color.fromARGB(168, 28, 18, 1),
-                dimensions: 100,
-              ),
-            ],
+      physics: BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          ArtisteCircle(
+            image: AssetImage("assets/abm23.jpg"),
+            color: Color.fromARGB(255, 22, 16, 3),
+            dimensions: 100,
           ),
-        );
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/ni.jpg"),
+            color: Color.fromARGB(255, 75, 53, 3),
+            dimensions: 100,
+          ),
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/profil_aya.jpg.png"),
+            color: Color.fromARGB(255, 189, 44, 44),
+            dimensions: 100,
+          ),
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/profil_cardi.jpeg"),
+            color: Color.fromARGB(255, 44, 150, 189),
+            dimensions: 100,
+          ),
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/profil_nicki.jpeg"),
+            color: Color.fromARGB(255, 189, 44, 165),
+            dimensions: 100,
+          ),
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/profil_ice.jpeg"),
+            color: Color.fromARGB(255, 229, 218, 192),
+            dimensions: 100,
+          ),
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/profil_doja.jpeg"),
+            color: Color.fromARGB(255, 13, 13, 7),
+            dimensions: 100,
+          ),
+          SizedBox(width: 16),
+          ArtisteCircle(
+            image: AssetImage("assets/profil_damso.jpeg"),
+            color: Color.fromARGB(168, 28, 18, 1),
+            dimensions: 100,
+          ),
+        ],
+      ),
+    );
   }
 
   Container artistPickSection(BuildContext context) {
@@ -484,7 +485,7 @@ class _ArtistViewState extends State<ArtistView> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(22),
               child: Container(
-                padding: EdgeInsets.all(1),
+                padding: EdgeInsets.all(2.5),
                 color: Colors.white,
                 // width: 200,
                 child: Row(
@@ -508,6 +509,7 @@ class _ArtistViewState extends State<ArtistView> {
                         color: Colors.black,
                       ),
                     ),
+                    SizedBox(width: 5),
                   ],
                 ),
               ),

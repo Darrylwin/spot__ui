@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
-
 import '../widgets/album_card.dart';
-import '../widgets/row_album_card.dart';
 
 class ProfileView extends StatefulWidget {
   ProfileView({super.key});
@@ -55,7 +53,7 @@ class _ProfileViewState extends State<ProfileView> {
             height: containerHeight,
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.center,
-            color: Colors.pink,
+            color: Colors.transparent,
             child: Image(
               image: AssetImage("assets/album5.jpg"),
               // width: MediaQuery.of(context).size.width,
@@ -114,20 +112,7 @@ class _ProfileViewState extends State<ProfileView> {
                                   style: TextStyle(fontSize: 15),
                                   "1.888.132 Likes 5h 3m",
                                 ),
-                                SizedBox(height: 16),
-                                Stack(
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.favorite),
-                                        SizedBox(width: 16),
-                                        Icon(Icons.more_horiz)
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                 ],
                             ),
                           ),
                         ],
@@ -213,8 +198,8 @@ class _ProfileViewState extends State<ProfileView> {
               child: AnimatedContainer(
                 duration: Duration(milliseconds: 250),
                 color: showTopBar
-                    ? Color(0xFFC61855).withOpacity(1)
-                    : Color(0xFFC61855).withOpacity(0),
+                    ? Colors.transparent
+                    : Colors.transparent,
                 padding: EdgeInsets.symmetric(
                   horizontal: 18,
                   vertical: 10,

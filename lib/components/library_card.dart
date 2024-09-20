@@ -27,6 +27,9 @@ class LibraryCard extends StatelessWidget {
             children: [
               Text(
                 bolledText,
+/*
+                overflow: TextOverflow.ellipsis,
+*/
                 style: TextStyle(fontSize: 19.3, fontWeight: FontWeight.w600),
               ),
               SizedBox(height: 8),

@@ -5,6 +5,7 @@ import '../models/play_model.dart';
 class LibraryView extends StatefulWidget {
   final ImageProvider image;
   final Color color;
+
   LibraryView({
     super.key,
     required this.image,
