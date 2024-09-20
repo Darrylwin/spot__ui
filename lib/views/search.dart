@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../components/account_profile.dart';
+import '../components/my_page_view.dart';
 import '../widgets/browse_card.dart';
 import '../components/genre_card.dart';
 
@@ -119,15 +120,25 @@ class _SearchViewState extends State<SearchView> {
                             child: ListView.separated(
                               padding: EdgeInsets.all(2),
                               itemBuilder: (context, index) {
-                                return ClipRRect(
-                                  borderRadius: BorderRadius.circular(18),
-                                  child: Container(
-                                    width: 125,
-                                    // child: Stack(
-                                    // children: [
-                                    child: Image.asset(
-                                      genre[index].bgImage,
-                                      fit: BoxFit.cover,
+                                return GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => MyPageView(),
+                                      ),
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: Container(
+                                      width: 125,
+                                      // child: Stack(
+                                      // children: [
+                                      child: Image.asset(
+                                        genre[index].bgImage,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 );
