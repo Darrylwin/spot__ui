@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class Post extends StatelessWidget {
@@ -29,9 +31,12 @@ class Post extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
+                    IconButton(
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
+                      onPressed: () => Navigator.pop(context),
                     ),
                     Text(
                       "#Afro R&B",
@@ -59,25 +64,31 @@ class Post extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Image.asset(
-                          "assets/abm18.jpg",
-                          height: 80,
-                          width: 80,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            "assets/abm18.jpg",
+                            height: 55,
+                            width: 55,
+                          ),
                         ),
+                        SizedBox(width: 18),
                         Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
                               "DODO",
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 21,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               'TAYC',
                               style: TextStyle(
-                                color: Colors.grey[100],
-                                fontSize: 20,
+                                color: const Color.fromARGB(255, 165, 163, 163),
+                                fontSize: 13.7,
                                 // fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -85,9 +96,26 @@ class Post extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Icon(Icons.add_circle_outline, size: 20),
+                    Icon(Icons.add_circle_outline, size: 30),
                   ],
                 ),
+                // Stack(
+                //   children: [
+                //     Positioned(
+                //       top: 10,
+                //       left: 20,
+                //       child: Container(
+                //         width: 100,
+                //         height: 50,
+                //         color: Colors.blue,
+                //         child: Column(
+                //             // ... vos éléments de colonne
+                //             ),
+                //       ),
+                //     ),
+                //     // ... autres éléments
+                //   ],
+                // )
               ],
             ),
           ),
