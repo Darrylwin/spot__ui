@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+// ignore_for_file: sized_box_for_whitespace, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -27,11 +27,11 @@ class Post extends StatelessWidget {
     const Color.fromARGB(255, 9, 62, 11),
     const Color.fromARGB(255, 143, 38, 6),
     const Color.fromARGB(255, 8, 56, 62),
-    const Color.fromARGB(255, 156, 29, 71),
+    const Color.fromARGB(255, 98, 11, 40),
     const Color.fromARGB(255, 19, 56, 47),
-    const Color.fromARGB(255, 107, 85, 19),
+    const Color.fromARGB(255, 80, 62, 11),
     const Color.fromARGB(255, 63, 7, 7),
-    const Color.fromARGB(255, 112, 123, 11),
+    const Color.fromARGB(255, 65, 71, 9),
     const Color.fromARGB(255, 11, 102, 81),
     const Color.fromARGB(255, 4, 26, 150),
     const Color.fromARGB(255, 85, 65, 65),
@@ -87,12 +87,19 @@ class Post extends StatelessWidget {
                     SizedBox(width: MediaQuery.of(context).size.width / 5.5)
                   ],
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height / 5),
                 Expanded(
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 2,
-                    height: MediaQuery.of(context).size.width / 2,
-                    child: Image.asset(
-                      imagePaths.last,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 1.6,
+                      height: MediaQuery.of(context).size.width / 5,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(imagePaths.last),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -108,16 +115,30 @@ class Post extends StatelessWidget {
                           children: [
                             Text(
                               "#Pop music",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            const SizedBox(width: 10),
                             Text(
                               "#French music",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
+                            const SizedBox(width: 10),
                             Text(
                               "#Afro beat",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 15),
+                        const SizedBox(height: 18),
                         Row(
                           children: [
                             ClipRRect(
@@ -158,7 +179,29 @@ class Post extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Badge(),
+                        Badge(
+                          backgroundColor: Colors.white,
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: AssetImage("assets/liked.jpg"),
+                              ),
+                            ),
+                          ),
+                          label: Icon(
+                            Icons.add,
+                            size: 12,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          "2.3M",
+                          style: TextStyle(fontSize: 13),
+                        ),
+                        const SizedBox(height: 25),
                         Icon(Icons.volume_up, size: 30),
                         const SizedBox(height: 25),
                         Icon(Icons.share, size: 30),
@@ -175,6 +218,19 @@ class Post extends StatelessWidget {
                   color: Colors.white,
                   thickness: 2,
                 ),
+                // Positioned(
+                //   top: 0,
+                //   bottom: 0,
+                //   left: 0,
+                //   right: 0,
+                //   child: Container(
+                //     height: 50,
+                //     width: 50,
+                //     decoration: BoxDecoration(
+                //       color: const Color.fromARGB(255, 68, 19, 19),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
